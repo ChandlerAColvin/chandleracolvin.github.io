@@ -2,120 +2,265 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Discount Lube and Auto Repair · Auto repair in Oklahoma City</title>
-<meta name="description" content="Discount Lube and Auto Repair — Honest, affordable auto repair in Oklahoma City. Rated 4.6★ by 312 customers on Google.. 2651 W Britton Rd, Oklahoma City, OK 73120. Call (405) 749-9400.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Discount Lube and Auto Repair</title>
+<meta name="description" content="Honest, affordable auto repair in Oklahoma City. Rated 4.6★ by 312 customers on Google.">
 <meta name="robots" content="noindex">
 <style>
-  :root { --accent: #c0392b; --ink: #1d232a; --muted: #5d6873; --bg: #fbfaf7; --card: #fff; }
-  * { box-sizing: border-box; }
-  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
-  a { color: var(--accent); }
-  .preview { background: #222; color: #eee; text-align: center; font-size: 13px; padding: 6px 12px; }
-  header { position: sticky; top: 0; z-index: 5; background: rgba(251,250,247,.95); backdrop-filter: blur(6px); border-bottom: 1px solid #e8e5df; }
-  .bar { max-width: 1080px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; gap: 12px; }
-  .logo { font-weight: 800; font-size: 20px; letter-spacing: -.02em; }
-  nav a { margin-left: 18px; color: var(--ink); text-decoration: none; font-size: 15px; }
-  .btn { display: inline-block; background: var(--accent); color: #fff !important; padding: 12px 22px; border-radius: 999px; text-decoration: none; font-weight: 600; }
-  .btn.ghost { background: transparent; color: var(--accent) !important; border: 2px solid var(--accent); }
-  .hero { position: relative; padding: 96px 20px; text-align: center; color: #fff;
-          background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.55)), var(--accent) url("") center/cover; }
-  .hero h1 { font-size: clamp(34px, 6vw, 58px); margin: 0 0 10px; letter-spacing: -.03em; line-height: 1.1; }
-  .hero p { font-size: 19px; max-width: 620px; margin: 0 auto 28px; opacity: .95; }
-  .hero .btn.ghost { color: #fff !important; border-color: #fff; margin-left: 8px; }
-  section { max-width: 1080px; margin: auto; padding: 72px 20px; }
-  h2 { font-size: 32px; letter-spacing: -.02em; margin: 0 0 24px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
-  .card { background: var(--card); border: 1px solid #ece9e3; border-radius: 14px; padding: 22px; }
-  .card h3 { margin: 0 0 6px; font-size: 19px; }
-  .card p { margin: 0; color: var(--muted); }
-  .price { display: inline-block; margin-top: 12px; font-weight: 700; color: var(--accent); }
-  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
-  table { width: 100%; border-collapse: collapse; }
-  td { padding: 8px 0; border-bottom: 1px solid #ece9e3; }
-  td:last-child { text-align: right; color: var(--muted); }
-  iframe { width: 100%; height: 320px; border: 0; border-radius: 14px; }
-  blockquote { margin: 0; background: var(--card); border-left: 4px solid var(--accent); padding: 18px 22px; border-radius: 10px; font-size: 17px; }
-  cite { display: block; margin-top: 8px; font-style: normal; color: var(--muted); font-size: 14px; }
-  form { display: grid; gap: 12px; }
-  input, textarea { font: inherit; padding: 12px 14px; border: 1px solid #d8d4cc; border-radius: 10px; background: #fff; }
-  footer { text-align: center; padding: 32px 20px 96px; color: var(--muted); font-size: 14px; border-top: 1px solid #e8e5df; }
-  .callbar { display: none; }
-  @media (max-width: 760px) {
-    nav, .bar .btn { display: none; }
-    .split { grid-template-columns: 1fr; }
-    .hero { padding: 72px 20px; }
-    .hero .btn.ghost { margin: 10px 0 0; }
-    .callbar { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9; }
-    .callbar a { flex: 1; text-align: center; padding: 16px; color: #fff; background: var(--accent); text-decoration: none; font-weight: 700; }
-    .callbar a + a { background: var(--ink); }
-  }
+:root { --accent:#c0392b; --ink:#1d1d1f; --muted:#6e6e73; --light:#f5f5f7; --dark:#000; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Inter,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; line-height:1.5; }
+a { color:inherit; }
+img { max-width:100%; display:block; }
+.wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
+.narrow { max-width:760px; }
+.center { text-align:center; }
+.muted { color:var(--muted); }
+.small-p { font-size:14px; }
+
+/* preview ribbon */
+.ribbon { background:#1d1d1f; color:#d2d2d7; font-size:12px; text-align:center; padding:7px 40px; position:relative; }
+.ribbon button { position:absolute; right:10px; top:3px; background:none; border:0; color:#d2d2d7; font-size:18px; cursor:pointer; }
+
+/* nav */
+nav.top { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.72); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid rgba(0,0,0,.08); }
+nav.top .wrap { display:flex; align-items:center; justify-content:space-between; height:52px; gap:18px; }
+.logo { height:30px; width:auto; }
+.wordmark { font-weight:700; letter-spacing:-.02em; font-size:17px; }
+.links { display:flex; gap:22px; font-size:13px; }
+.links a { text-decoration:none; color:#424245; }
+.links a:hover { color:var(--accent); }
+
+/* buttons */
+.pill { display:inline-block; background:var(--accent); color:#fff !important; text-decoration:none; border:0; border-radius:980px; padding:12px 22px; font-size:17px; font-weight:500; cursor:pointer; transition:transform .2s, filter .2s; }
+.pill:hover { filter:brightness(1.08); transform:scale(1.02); }
+.pill.ghost { background:transparent; color:var(--accent) !important; box-shadow:inset 0 0 0 1.5px var(--accent); }
+.pill.small { padding:6px 14px; font-size:13px; }
+.ctas { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:26px; }
+
+/* type */
+.eyebrow { font-size:17px; font-weight:600; margin:0 0 8px; letter-spacing:-.01em; }
+h1 { font-size:clamp(44px,8vw,96px); line-height:1.02; letter-spacing:-.035em; margin:0; font-weight:700; }
+h2 { font-size:clamp(34px,5.4vw,64px); line-height:1.05; letter-spacing:-.03em; margin:0 0 18px; font-weight:700; }
+h3 { font-size:22px; letter-spacing:-.02em; margin:0 0 10px; }
+.lead { font-size:clamp(19px,2.4vw,26px); line-height:1.35; color:var(--muted); max-width:720px; margin:18px auto 0; letter-spacing:-.01em; }
+.big-p { font-size:21px; line-height:1.5; color:#424245; }
+
+/* hero */
+.hero { min-height:calc(100svh - 52px); display:flex; align-items:center; position:relative; padding:80px 0; background:radial-gradient(ellipse 75% 45% at 50% 48%, color-mix(in srgb, var(--accent) 16%, #fff) 0%, #fff 70%, var(--light) 100%); }
+.hero:not(.photo) h1 { background:linear-gradient(180deg, var(--ink) 30%, color-mix(in srgb, var(--accent) 70%, var(--ink))); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.hero.photo { background-size:cover; background-position:center; color:#fff; }
+.hero.photo .lead { color:rgba(255,255,255,.85); }
+.hero.photo .eyebrow { color:rgba(255,255,255,.8); }
+.hero.photo .pill.ghost { color:#fff !important; box-shadow:inset 0 0 0 1.5px #fff; }
+.status { margin-top:22px; font-size:15px; font-weight:500; }
+.status .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:7px; vertical-align:middle; }
+.scroll-cue { position:absolute; bottom:18px; left:50%; transform:translateX(-50%); font-size:30px; text-decoration:none; opacity:.6; animation:bob 2s infinite; }
+@keyframes bob { 50% { transform:translate(-50%,6px); } }
+
+/* bands */
+.band { padding:110px 0; }
+.band.light, .feature.light { background:var(--light); }
+.band.dark, .feature.dark { background:var(--dark); color:#f5f5f7; }
+.band.dark .lead, .feature.dark p { color:#a1a1a6; }
+.band.dark .muted { color:#a1a1a6; }
+
+/* highlight tiles */
+.tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+.tile { background:#fff; border-radius:22px; padding:30px 26px; }
+.tile .big { font-size:clamp(24px,2.4vw,30px); font-weight:700; letter-spacing:-.03em; line-height:1.1; color:var(--accent); }
+.tile .small { color:var(--muted); margin-top:8px; font-size:17px; }
+
+/* features */
+.feature { padding:120px 0; overflow:hidden; }
+.split { display:grid; grid-template-columns:1fr 1.1fr; gap:56px; align-items:center; }
+.feature.flip .copy { order:2; }
+.feature p { font-size:19px; }
+.media img { border-radius:24px; width:100%; aspect-ratio:4/3; object-fit:cover; box-shadow:0 30px 60px rgba(0,0,0,.25); }
+.checks { list-style:none; padding:0; margin:22px 0 0; display:grid; gap:10px; font-size:17px; }
+.checks li::before { content:"✓"; color:var(--accent); font-weight:700; margin-right:10px; }
+
+/* cards (no-photo services) */
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:44px; }
+.card { background:var(--light); border-radius:22px; padding:30px; }
+.card p { color:var(--muted); margin:0; }
+
+/* chips */
+.chips { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:26px; }
+.chip { background:#fff; border-radius:980px; padding:10px 18px; font-weight:600; font-size:15px; }
+
+/* reviews */
+.quotes { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:44px; }
+.quote { margin:0; background:var(--light); border-radius:22px; padding:30px; display:flex; flex-direction:column; justify-content:space-between; }
+.quote blockquote { margin:0; font-size:17px; line-height:1.55; }
+.quote figcaption { margin-top:18px; color:var(--muted); font-size:14px; font-weight:600; }
+
+/* gallery */
+.gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:12px; margin-top:44px; }
+.shot img { width:100%; aspect-ratio:5/4; object-fit:cover; border-radius:16px; transition:transform .4s; }
+.shot:hover img { transform:scale(1.03); }
+
+/* visit */
+.storefront { width:100%; border-radius:24px; aspect-ratio:2/1; object-fit:cover; margin:40px 0 16px; }
+.visit { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+.panel { background:#fff; border-radius:22px; padding:30px; }
+.hours { width:100%; border-collapse:collapse; font-size:17px; }
+.hours td { padding:9px 0; border-bottom:1px solid #e8e8ed; }
+.hours td:last-child { text-align:right; color:var(--muted); }
+.hours tr.today td { font-weight:700; color:var(--ink); }
+.contact { list-style:none; padding:0; margin:0; display:grid; gap:14px; font-size:17px; }
+.contact span { display:block; font-size:13px; color:var(--muted); }
+.contact a { text-decoration:none; color:var(--accent); font-weight:500; }
+.map { width:100%; height:340px; border:0; border-radius:22px; margin-top:16px; }
+
+/* form */
+.quote-form { display:grid; gap:12px; margin-top:34px; text-align:left; }
+.quote-form input, .quote-form textarea { font:inherit; font-size:17px; padding:15px 16px; border-radius:14px; border:1px solid #424245; background:#1d1d1f; color:#f5f5f7; }
+.quote-form .pill { justify-self:center; margin-top:6px; }
+.quote-form p { text-align:center; }
+
+footer { background:var(--light); color:var(--muted); font-size:12px; padding:30px 0 110px; }
+footer .wrap { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+
+/* mobile bar */
+.mbar { display:none; }
+
+/* hero entrance (pure CSS, runs on load) */
+.rise { animation:rise 1s cubic-bezier(.2,.7,.2,1) both; animation-delay:calc(var(--d) * 120ms); }
+@keyframes rise { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:none; } }
+
+/* reveal animation */
+.js .reveal { opacity:0; transform:translateY(40px) scale(.98); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+.js .reveal.in { opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce) { .rise { animation:none; } .js .reveal { opacity:1; transform:none; transition:none; } .scroll-cue { animation:none; } }
+
+@media (max-width:820px) {
+  .links { display:none; }
+  .split, .visit { grid-template-columns:1fr; gap:34px; }
+  .feature.flip .copy { order:0; }
+  .band, .feature { padding:80px 0; }
+  .mbar { display:flex; position:fixed; left:12px; right:12px; bottom:calc(12px + env(safe-area-inset-bottom)); z-index:60; background:rgba(29,29,31,.86); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-radius:18px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.3); }
+  .mbar a { flex:1; text-align:center; color:#fff; text-decoration:none; padding:15px 0; font-weight:600; font-size:15px; }
+  .mbar a:first-child { background:var(--accent); }
+  .tiles { grid-template-columns:1fr 1fr; gap:10px; }
+  .tile { padding:20px 16px; border-radius:18px; }
+  .tile .big { font-size:21px; }
+  .tile .small { font-size:14px; }
+}
 </style>
 </head>
 <body>
-<div class="preview">Preview concept made for Discount Lube and Auto Repair · not the official site · not affiliated</div>
-<header><div class="bar">
-  <div class="logo">Discount Lube and Auto Repair</div>
-  <nav><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a><a href="#contact">Contact</a></nav>
-  <a class="btn" href="tel:4057499400">Call (405) 749-9400</a>
-</div></header>
+<script>document.documentElement.classList.add('js')</script>
+<div class="ribbon" id="ribbon">Preview concept made for Discount Lube and Auto Repair · not the official site · not affiliated<button aria-label="Dismiss" onclick="this.parentNode.remove()">×</button></div>
+<nav class="top"><div class="wrap"><a href="#top" style="text-decoration:none"><span class="wordmark">Discount Lube and Auto Repair</span></a><div class="links"><a href="#services">Services</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#visit">Hours & location</a></div><a class="pill small" href="tel:4057499400">Call</a></div></nav>
 
-<div class="hero">
-  <h1>Discount Lube and Auto Repair</h1>
-  <p>Honest, affordable auto repair in Oklahoma City. Rated 4.6★ by 312 customers on Google.</p>
-  <a class="btn" href="tel:4057499400">Call now</a>
-  <a class="btn ghost" href="#visit">Hours &amp; directions</a>
-</div>
-
-<section>
-  <h2>About us</h2>
-  <p style="font-size:18px;max-width:760px">Discount Lube and Auto Repair keeps Oklahoma City drivers on the road with straightforward diagnostics, fair prices and repairs done right the first time. Call ahead or just stop by, and we&#x27;ll take a look.</p>
-</section>
-
-<section id="services" style="padding-top:0">
-  <h2>What we do</h2>
-  <div class="grid"><div class="card"><h3>Diagnostics &amp; check engine</h3><p>We find the real problem before we fix anything, and explain it in plain English.</p></div>
-<div class="card"><h3>Brakes &amp; suspension</h3><p>Pads, rotors, shocks, struts and alignment checks to keep you stopping and riding smooth.</p></div>
-<div class="card"><h3>Oil changes &amp; maintenance</h3><p>Oil, filters, fluids, belts and tune-ups on the schedule your car actually needs.</p></div>
-<div class="card"><h3>A/C &amp; heating</h3><p>Recharge, leak checks and repairs, because Oklahoma summers don&#x27;t wait.</p></div>
-<div class="card"><h3>Engine &amp; transmission</h3><p>From starters and alternators to bigger repairs. Honest quotes before work begins.</p></div>
-<div class="card"><h3>Electrical</h3><p>Batteries, wiring, lights and charging systems diagnosed and repaired.</p></div></div>
-</section>
-
-<section id="reviews" style="padding-top:0">
-  <h2>What customers say</h2>
-  <div class="grid"><div class="card" style="text-align:center"><div style="font-size:30px;color:#f5a623">★★★★★</div><h3 style="font-size:34px;margin:6px 0">4.6 / 5</h3><p>Average from 312 Google reviews</p></div></div>
-</section>
-
-<section id="visit" style="padding-top:0">
-  <div class="split">
-    <div>
-      <h2>Hours</h2>
-      <table><tr><td>Mon–Sat</td><td>8 AM – 6 PM</td></tr>
-<tr><td>Sunday</td><td>Closed</td></tr></table>
-      <p style="margin-top:20px"><strong>2651 W Britton Rd, Oklahoma City, OK 73120</strong><br><a href="tel:4057499400">(405) 749-9400</a></p>
-    </div>
-    <iframe loading="lazy" title="Map" src="https://www.google.com/maps?q=2651+W+Britton+Rd,+Oklahoma+City,+OK+73120&output=embed"></iframe>
+<section class="hero" id="top">
+  <div class="wrap center">
+    <p class="eyebrow rise" style="--d:0">Auto repair · Oklahoma City</p>
+    <h1 class="rise" style="--d:1">Discount Lube and Auto Repair</h1>
+    <p class="lead rise" style="--d:2">Honest, affordable auto repair in Oklahoma City. Rated 4.6★ by 312 customers on Google.</p>
+    <div class="ctas rise" style="--d:3"><a class="pill" href="tel:4057499400">Call (405) 749-9400</a><a class="pill ghost" href="https://www.google.com/maps/dir/?api=1&destination=2651+W+Britton+Rd,+Oklahoma+City,+OK+73120" target="_blank" rel="noopener">Directions</a></div>
+    <p class="status rise" style="--d:4" data-open-status></p>
+  </div>
+  <a class="scroll-cue" href="#highlights" aria-label="Scroll down">&#8964;</a>
+</section><section class="band light" id="highlights"><div class="wrap"><div class="tiles"><div class="tile reveal"><div class="big">4.6★</div><div class="small">from 312 Google reviews</div></div><div class="tile reveal"><div class="big">8 AM – 6 PM</div><div class="small">Mon–Sat</div></div><div class="tile reveal"><div class="big">(405) 749-9400</div><div class="small">Questions? Call us</div></div></div></div></section>
+<section class="band" id="services">
+  <div class="wrap">
+    <p class="eyebrow center reveal" style="color:#c0392b">What we do</p>
+    <h2 class="center reveal">Everything your auto repair customers need.</h2>
+    <div class="cards"><div class="card reveal"><h3>Diagnostics &amp; check engine</h3><p>We find the real problem before we fix anything, and explain it in plain English.</p></div><div class="card reveal"><h3>Brakes &amp; suspension</h3><p>Pads, rotors, shocks, struts and alignment checks to keep you stopping and riding smooth.</p></div><div class="card reveal"><h3>Oil changes &amp; maintenance</h3><p>Oil, filters, fluids, belts and tune-ups on the schedule your car actually needs.</p></div><div class="card reveal"><h3>A/C &amp; heating</h3><p>Recharge, leak checks and repairs, because Oklahoma summers don&#x27;t wait.</p></div><div class="card reveal"><h3>Engine &amp; transmission</h3><p>From starters and alternators to bigger repairs. Honest quotes before work begins.</p></div><div class="card reveal"><h3>Electrical</h3><p>Batteries, wiring, lights and charging systems diagnosed and repaired.</p></div></div>
   </div>
 </section>
-
-<section id="contact" style="padding-top:0">
-  <div class="split">
-    <div>
-      <h2>Get in touch</h2>
-      <p>Questions, quotes or bookings: send a message and we'll get back to you, usually the same day.</p>
+<section class="band light" id="about">
+  <div class="wrap narrow center">
+    <p class="eyebrow reveal" style="color:#c0392b">About us</p>
+    <h2 class="reveal">About Discount Lube and Auto Repair</h2>
+    <p class="reveal big-p">Discount Lube and Auto Repair keeps Oklahoma City drivers on the road with straightforward diagnostics, fair prices and repairs done right the first time. Call ahead or just stop by, and we&#x27;ll take a look.</p>
+    
+  </div>
+</section>
+<section class="band" id="reviews">
+  <div class="wrap">
+    <p class="eyebrow center reveal" style="color:#c0392b">Reviews</p>
+    <h2 class="center reveal">What our customers say.</h2>
+    <p class="center muted reveal">4.6★ average from 312 Google reviews</p>
+    
+  </div>
+</section>
+<section class="band light" id="visit">
+  <div class="wrap">
+    <p class="eyebrow center reveal" style="color:#c0392b">Visit</p>
+    <h2 class="center reveal">Come see us.</h2>
+    
+    <div class="visit">
+      <div class="panel reveal">
+        <h3>Hours</h3>
+        <table class="hours"><tr><td>Mon–Sat</td><td>8 AM – 6 PM</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table>
+        <p class="status" data-open-status></p>
+      </div>
+      <div class="panel reveal">
+        <h3>Contact</h3>
+        <ul class="contact"><li><span>Call</span><a href="tel:4057499400">(405) 749-9400</a></li><li><span>Address</span><a href="https://www.google.com/maps/dir/?api=1&destination=2651+W+Britton+Rd,+Oklahoma+City,+OK+73120" target="_blank" rel="noopener">2651 W Britton Rd, Oklahoma City, OK 73120</a></li></ul>
+        
+      </div>
     </div>
-    <form onsubmit="event.preventDefault(); this.innerHTML='<p><strong>Thanks!</strong> (Preview only: messages go nowhere yet.)</p>'">
-      <input required placeholder="Your name">
-      <input required type="email" placeholder="Email">
-      <input placeholder="Phone (optional)">
-      <textarea rows="4" placeholder="How can we help?"></textarea>
-      <button class="btn" style="border:0;cursor:pointer">Send message</button>
+    <iframe class="map reveal" loading="lazy" title="Map" src="https://www.google.com/maps?q=2651+W+Britton+Rd,+Oklahoma+City,+OK+73120&output=embed"></iframe>
+  </div>
+</section>
+<section class="band dark" id="quote">
+  <div class="wrap narrow center">
+    <p class="eyebrow reveal" style="color:#c0392b">Request a quote</p>
+    <h2 class="reveal">Tell us what's going on.</h2>
+    <p class="lead reveal">We'll get back to you with an honest estimate.</p>
+    <form class="quote-form reveal" data-target="sms:4057499400">
+      <input name="name" placeholder="Your name" required>
+      <input name="phone" placeholder="Phone" required>
+      <input name="vehicle" placeholder="Year, make & model (optional)">
+      <textarea name="msg" rows="4" placeholder="What do you need help with?" required></textarea>
+      <button class="pill" type="submit">Send request</button>
+      <p class="muted small-p">Opens a text message to the shop.</p>
     </form>
   </div>
 </section>
+<footer><div class="wrap"><span>© 2026 Discount Lube and Auto Repair · 2651 W Britton Rd, Oklahoma City, OK 73120 · (405) 749-9400</span><span>Preview concept by Chandler Colvin</span></div></footer>
+<div class="mbar"><a href="tel:4057499400">Call</a><a href="https://www.google.com/maps/dir/?api=1&destination=2651+W+Britton+Rd,+Oklahoma+City,+OK+73120" target="_blank" rel="noopener">Directions</a></div>
+<script>
+// Reveal sections as they scroll into view
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (Array.from(el.parentNode.children).indexOf(el) % 6) * 70 + 'ms'; io.observe(el); });
 
-<footer>© 2026 Discount Lube and Auto Repair · 2651 W Britton Rd, Oklahoma City, OK 73120</footer>
-<div class="callbar"><a href="tel:4057499400">Call</a><a href="#visit">Directions</a></div>
+// Open-now status (Oklahoma City time)
+const WEEK = null;
+(function () {
+  const days = ['sun','mon','tue','wed','thu','fri','sat'];
+  const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }));
+  const rows = document.querySelectorAll('.hours tr');
+  if (!WEEK) return;
+  const fmt = t => { let [h, m] = t.split(':').map(Number); const ap = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12; return h + (m ? ':' + String(m).padStart(2, '0') : '') + ' ' + ap; };
+  const today = WEEK[days[now.getDay()]];
+  const mins = now.getHours() * 60 + now.getMinutes();
+  let text, color;
+  if (today) {
+    const [o, c] = today.split('-'); const om = +o.split(':')[0] * 60 + +o.split(':')[1]; const cm = +c.split(':')[0] * 60 + +c.split(':')[1];
+    if (mins >= om && mins < cm) { text = 'Open now · until ' + fmt(c); color = '#30d158'; }
+    else if (mins < om) { text = 'Closed · opens today at ' + fmt(o); color = '#ff9f0a'; }
+  }
+  if (!text) {
+    for (let i = 1; i <= 7; i++) { const d = days[(now.getDay() + i) % 7]; if (WEEK[d]) { text = 'Closed · opens ' + (i === 1 ? 'tomorrow' : d[0].toUpperCase() + d.slice(1)) + ' at ' + fmt(WEEK[d].split('-')[0]); break; } }
+    color = '#ff453a';
+  }
+  document.querySelectorAll('[data-open-status]').forEach(el => el.innerHTML = '<span class="dot" style="background:' + color + '"></span>' + text);
+})();
+
+// Quote form -> email or text
+document.querySelectorAll('.quote-form').forEach(f => f.addEventListener('submit', e => {
+  e.preventDefault();
+  const v = Object.fromEntries(new FormData(f));
+  const body = `Name: ${v.name}\nPhone: ${v.phone}\nVehicle: ${v.vehicle || '-'}\n\n${v.msg}`;
+  const t = f.dataset.target;
+  location.href = t.startsWith('mailto:') ? `${t}?subject=${encodeURIComponent('Quote request from ' + v.name)}&body=${encodeURIComponent(body)}` : `${t}?&body=${encodeURIComponent(body)}`;
+}));
+</script>
 </body>
 </html>
