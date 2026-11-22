@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Maple Street Bakery</title>
-<meta name="description" content="Scratch-made bread, pastries and custom cakes, baked fresh every morning since 1998.">
+<meta name="description" content="Scratch-made bread, pastries and custom cakes, out of the oven by 7 AM. (Demo business, made up for this sample.)">
 <meta name="robots" content="noindex">
 <style>
-:root { --accent:#a0522d; --ink:#1d1d1f; --muted:#6e6e73; --light:#f5f5f7; --dark:#000; }
+:root { --accent:#b5622d; --ink:#1d1d1f; --muted:#6e6e73; --light:#f5f5f7; --dark:#000; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Inter,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; line-height:1.5; }
@@ -81,6 +81,17 @@ h3 { font-size:22px; letter-spacing:-.02em; margin:0 0 10px; }
 .checks { list-style:none; padding:0; margin:22px 0 0; display:grid; gap:10px; font-size:17px; }
 .checks li::before { content:"✓"; color:var(--accent); font-weight:700; margin-right:10px; }
 
+/* illustrated feature panel */
+.art { position:relative; aspect-ratio:4/3; border-radius:24px; overflow:hidden; display:grid; place-items:center;
+  background:radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--accent) 75%, #fff) 0%, var(--accent) 45%, color-mix(in srgb, var(--accent) 55%, #000) 100%); box-shadow:0 30px 60px rgba(0,0,0,.25); }
+.art::before { content:""; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.18) 1px, transparent 1px); background-size:22px 22px; }
+.art-glow { position:absolute; width:70%; aspect-ratio:1; border-radius:50%; background:rgba(255,255,255,.25); filter:blur(60px); top:-20%; right:-15%; }
+.art-icon { position:relative; font-size:clamp(90px,12vw,150px); filter:drop-shadow(0 20px 30px rgba(0,0,0,.3)); animation:float 6s ease-in-out infinite; }
+.art-stat { position:absolute; left:22px; bottom:22px; background:rgba(255,255,255,.88); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-radius:16px; padding:12px 16px; color:#1d1d1f; }
+.art-stat b { display:block; font-size:22px; letter-spacing:-.02em; color:var(--accent); }
+.art-stat span { font-size:13px; color:#6e6e73; }
+@keyframes float { 50% { transform:translateY(-12px) rotate(-3deg); } }
+
 /* cards (no-photo services) */
 .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:44px; }
 .card { background:var(--light); border-radius:22px; padding:30px; }
@@ -152,86 +163,112 @@ footer .wrap { display:flex; justify-content:space-between; gap:12px; flex-wrap:
 </head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
-<div class="ribbon" id="ribbon">Preview concept made for Maple Street Bakery · not the official site · not affiliated<button aria-label="Dismiss" onclick="this.parentNode.remove()">×</button></div>
-<nav class="top"><div class="wrap"><a href="#top" style="text-decoration:none"><span class="wordmark">Maple Street Bakery</span></a><div class="links"><a href="#services">Services</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#visit">Hours & location</a></div><a class="pill small" href="tel:5550102345">Call</a></div></nav>
+<div class="ribbon" id="ribbon">Demo site by Chandler Colvin · fictional business · chandleracolvin.github.io<button aria-label="Dismiss" onclick="this.parentNode.remove()">×</button></div>
+<nav class="top"><div class="wrap"><a href="#top" style="text-decoration:none"><span class="wordmark">Maple Street Bakery</span></a><div class="links"><a href="#services">Services</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#visit">Hours & location</a></div><a class="pill small" href="tel:4055550123">Call</a></div></nav>
 
 <section class="hero" id="top">
   <div class="wrap center">
-    <p class="eyebrow rise" style="--d:0">Bakery · Springfield</p>
-    <h1 class="rise" style="--d:1">Maple Street Bakery</h1>
-    <p class="lead rise" style="--d:2">Scratch-made bread, pastries and custom cakes, baked fresh every morning since 1998.</p>
-    <div class="ctas rise" style="--d:3"><a class="pill" href="tel:5550102345">Call (555) 010-2345</a><a class="pill ghost" href="https://www.google.com/maps/dir/?api=1&destination=123+Maple+St,+Springfield,+IL+62701" target="_blank" rel="noopener">Directions</a></div>
+    <p class="eyebrow rise" style="--d:0">Bakery · Oklahoma City</p>
+    <h1 class="rise" style="--d:1">Baked fresh.<br>Every morning.</h1>
+    <p class="lead rise" style="--d:2">Scratch-made bread, pastries and custom cakes, out of the oven by 7 AM. (Demo business, made up for this sample.)</p>
+    <div class="ctas rise" style="--d:3"><a class="pill" href="tel:4055550123">Call (405) 555-0123</a><a class="pill ghost" href="https://www.google.com/maps/dir/?api=1&destination=Oklahoma+City,+OK" target="_blank" rel="noopener">Directions</a></div>
     <p class="status rise" style="--d:4" data-open-status></p>
   </div>
   <a class="scroll-cue" href="#highlights" aria-label="Scroll down">&#8964;</a>
-</section><section class="band light" id="highlights"><div class="wrap"><div class="tiles"><div class="tile reveal"><div class="big">6:30am – 5pm</div><div class="small">Mon–Fri</div></div><div class="tile reveal"><div class="big">(555) 010-2345</div><div class="small">Questions? Call us</div></div></div></div></section>
-<section class="band" id="services">
-  <div class="wrap">
-    <p class="eyebrow center reveal" style="color:#a0522d">What we do</p>
-    <h2 class="center reveal">Everything your bakery customers need.</h2>
-    <div class="cards"><div class="card reveal"><h3>Fresh bread daily</h3><p>Sourdough, rye, challah and baguettes, out of the oven by 7am.</p></div><div class="card reveal"><h3>Custom cakes</h3><p>Birthdays, weddings and showers. Order 3 days ahead.</p></div><div class="card reveal"><h3>Holiday pre-orders</h3><p>Pies, cookie trays and stollen for the holidays. Reserve yours now.</p></div></div>
+</section><section class="band light" id="highlights"><div class="wrap"><div class="tiles"><div class="tile reveal"><div class="big">Out by 7 AM</div><div class="small">Fresh bread every morning</div></div><div class="tile reveal"><div class="big">Custom cakes</div><div class="small">Order 3 days ahead</div></div><div class="tile reveal"><div class="big">Holiday pre-orders</div><div class="small">Pies, trays &amp; stollen</div></div><div class="tile reveal"><div class="big">4.9★</div><div class="small">From 318 reviews</div></div></div></div></section>
+<section class="feature dark " id="services">
+  <div class="wrap split">
+    <div class="copy">
+      <p class="eyebrow reveal" style="color:#b5622d">Fresh bread</p>
+      <h2 class="reveal">Sourdough,<br>straight from the oven.</h2>
+      <p class="reveal">Sourdough, rye, challah and baguettes, baked by hand starting at 4 AM.</p>
+      <ul class="checks reveal"><li>Sourdough &amp; rye</li><li>Challah Fridays</li><li>Baguettes</li></ul>
+    </div>
+    <div class="media reveal"><div class="art"><div class="art-glow"></div><div class="art-icon">🥖</div><div class="art-stat"><b>From $5</b><span>Daily loaves</span></div></div></div>
+  </div>
+</section>
+<section class="feature light flip" id="f1">
+  <div class="wrap split">
+    <div class="copy">
+      <p class="eyebrow reveal" style="color:#b5622d">Custom cakes</p>
+      <h2 class="reveal">The cake they&#x27;ll<br>talk about.</h2>
+      <p class="reveal">Birthdays, weddings and showers, designed with you and baked to order.</p>
+      
+    </div>
+    <div class="media reveal"><div class="art"><div class="art-glow"></div><div class="art-icon">🎂</div><div class="art-stat"><b>From $38</b><span>Order 3 days ahead</span></div></div></div>
+  </div>
+</section>
+<section class="feature dark " id="f2">
+  <div class="wrap split">
+    <div class="copy">
+      <p class="eyebrow reveal" style="color:#b5622d">Holidays</p>
+      <h2 class="reveal">Reserve your<br>holiday table.</h2>
+      <p class="reveal">Pies, cookie trays and stollen for the holidays. Pre-order and skip the line.</p>
+      
+    </div>
+    <div class="media reveal"><div class="art"><div class="art-glow"></div><div class="art-icon">🥧</div><div class="art-stat"><b>Pre-order</b><span>Pick up by Dec 23</span></div></div></div>
   </div>
 </section>
 <section class="band light" id="about">
   <div class="wrap narrow center">
-    <p class="eyebrow reveal" style="color:#a0522d">About us</p>
-    <h2 class="reveal">About Maple Street Bakery</h2>
-    <p class="reveal big-p">We&#x27;re a family-owned neighborhood bakery. Everything is made by hand on site, starting at 4am, with local flour and butter. Stop in for a morning croissant or order a custom cake for your next celebration.</p>
-    
+    <p class="eyebrow reveal" style="color:#b5622d">About us</p>
+    <h2 class="reveal">Made by hand. Since 1998.</h2>
+    <p class="reveal big-p">This is a demo site built by Chandler Colvin to show what a local business website can look like. Maple Street Bakery is not a real business.</p>
+    <div class="chips reveal"><span class="chip">Local flour &amp; butter</span><span class="chip">Baked daily</span><span class="chip">Custom orders</span><span class="chip">Family owned</span></div>
   </div>
 </section>
 <section class="band" id="reviews">
   <div class="wrap">
-    <p class="eyebrow center reveal" style="color:#a0522d">Reviews</p>
+    <p class="eyebrow center reveal" style="color:#b5622d">Reviews</p>
     <h2 class="center reveal">What our customers say.</h2>
-    
-    <div class="quotes"><figure class="quote reveal"><blockquote>“Best sourdough in town, and the staff remembers my order.”</blockquote><figcaption>Google review</figcaption></figure><figure class="quote reveal"><blockquote>“They made our wedding cake and it was perfect.”</blockquote><figcaption>Google review</figcaption></figure></div>
+    <p class="center muted reveal">4.9★ average from 318 Google reviews</p>
+    <div class="quotes"><figure class="quote reveal"><blockquote>“Best sourdough in town, and the staff remembers my order.”</blockquote><figcaption>Demo customer</figcaption></figure><figure class="quote reveal"><blockquote>“They made our wedding cake and it was perfect.”</blockquote><figcaption>Demo customer</figcaption></figure></div>
   </div>
 </section>
 <section class="band light" id="visit">
   <div class="wrap">
-    <p class="eyebrow center reveal" style="color:#a0522d">Visit</p>
+    <p class="eyebrow center reveal" style="color:#b5622d">Visit</p>
     <h2 class="center reveal">Come see us.</h2>
     
     <div class="visit">
       <div class="panel reveal">
         <h3>Hours</h3>
-        <table class="hours"><tr><td>Mon–Fri</td><td>6:30am – 5pm</td></tr><tr><td>Saturday</td><td>7am – 3pm</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table>
+        <table class="hours"><tr><td>Monday – Friday</td><td>6:30 AM – 5 PM</td></tr><tr><td>Saturday</td><td>7 AM – 3 PM</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table>
         <p class="status" data-open-status></p>
       </div>
       <div class="panel reveal">
         <h3>Contact</h3>
-        <ul class="contact"><li><span>Call</span><a href="tel:5550102345">(555) 010-2345</a></li><li><span>Email</span><a href="mailto:hello@example.com">hello@example.com</a></li><li><span>Address</span><a href="https://www.google.com/maps/dir/?api=1&destination=123+Maple+St,+Springfield,+IL+62701" target="_blank" rel="noopener">123 Maple St, Springfield, IL 62701</a></li></ul>
+        <ul class="contact"><li><span>Call</span><a href="tel:4055550123">(405) 555-0123</a></li><li><span>Address</span><a href="https://www.google.com/maps/dir/?api=1&destination=Oklahoma+City,+OK" target="_blank" rel="noopener">Oklahoma City, OK</a></li></ul>
         
       </div>
     </div>
-    <iframe class="map reveal" loading="lazy" title="Map" src="https://www.google.com/maps?q=123+Maple+St,+Springfield,+IL+62701&output=embed"></iframe>
+    <iframe class="map reveal" loading="lazy" title="Map" src="https://www.google.com/maps?q=Oklahoma+City,+OK&output=embed"></iframe>
   </div>
 </section>
 <section class="band dark" id="quote">
   <div class="wrap narrow center">
-    <p class="eyebrow reveal" style="color:#a0522d">Request a quote</p>
+    <p class="eyebrow reveal" style="color:#b5622d">Request a quote</p>
     <h2 class="reveal">Tell us what's going on.</h2>
     <p class="lead reveal">We'll get back to you with an honest estimate.</p>
-    <form class="quote-form reveal" data-target="mailto:hello@example.com">
+    <form class="quote-form reveal" data-target="sms:4055550123">
       <input name="name" placeholder="Your name" required>
       <input name="phone" placeholder="Phone" required>
       <input name="vehicle" placeholder="Year, make & model (optional)">
       <textarea name="msg" rows="4" placeholder="What do you need help with?" required></textarea>
       <button class="pill" type="submit">Send request</button>
-      <p class="muted small-p">Sends an email to the shop from your phone or computer.</p>
+      <p class="muted small-p">Opens a text message to the shop.</p>
     </form>
   </div>
 </section>
-<footer><div class="wrap"><span>© 2026 Maple Street Bakery · 123 Maple St, Springfield, IL 62701 · (555) 010-2345</span><span>Preview concept by Chandler Colvin</span></div></footer>
-<div class="mbar"><a href="tel:5550102345">Call</a><a href="https://www.google.com/maps/dir/?api=1&destination=123+Maple+St,+Springfield,+IL+62701" target="_blank" rel="noopener">Directions</a></div>
+<footer><div class="wrap"><span>© 2026 Maple Street Bakery · Oklahoma City, OK · (405) 555-0123</span><span>Preview concept by Chandler Colvin</span></div></footer>
+<div class="mbar"><a href="tel:4055550123">Call</a><a href="https://www.google.com/maps/dir/?api=1&destination=Oklahoma+City,+OK" target="_blank" rel="noopener">Directions</a></div>
 <script>
 // Reveal sections as they scroll into view
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (Array.from(el.parentNode.children).indexOf(el) % 6) * 70 + 'ms'; io.observe(el); });
 
 // Open-now status (Oklahoma City time)
-const WEEK = null;
+const WEEK = {"sun": null, "mon": "06:30-17:00", "tue": "06:30-17:00", "wed": "06:30-17:00", "thu": "06:30-17:00", "fri": "06:30-17:00", "sat": "07:00-15:00"};
 (function () {
   const days = ['sun','mon','tue','wed','thu','fri','sat'];
   const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }));
