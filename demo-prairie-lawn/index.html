@@ -3,301 +3,244 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Prairie Green Lawn &amp; Landscape</title>
-<meta name="description" content="Weekly mowing, landscape design and seasonal cleanups across the OKC metro. (Demo business, made up for this sample.)">
+<title>Prairie Green Lawn &amp; Landscape · OKC Metro (Demo)</title>
+<meta name="description" content="Demo website by Chandler Colvin. Prairie Green is a fictional business.">
 <meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root { --accent:#2f8f4e; --ink:#1d1d1f; --muted:#6e6e73; --light:#f5f5f7; --dark:#000; }
+:root { --cream:#f6f2e8; --paper:#fffdf7; --green:#1f4d36; --leaf:#3f8f5a; --sage:#cfe0c3; --sun:#f2b84b; --ink:#1b2a21; --muted:#5f6d63; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Inter,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; line-height:1.5; }
-a { color:inherit; }
-img { max-width:100%; display:block; }
-.wrap { max-width:1080px; margin:0 auto; padding:0 22px; }
-.narrow { max-width:760px; }
-.center { text-align:center; }
-.muted { color:var(--muted); }
-.small-p { font-size:14px; }
+body { margin:0; background:var(--cream); color:var(--ink); font-family:"DM Sans",system-ui,sans-serif; -webkit-font-smoothing:antialiased; line-height:1.6; }
+a { color:inherit; text-decoration:none; }
+.wrap { max-width:1160px; margin:0 auto; padding:0 24px; }
+.serif { font-family:Fraunces,Georgia,serif; font-weight:500; letter-spacing:-.02em; }
+.ribbon { background:var(--green); color:#cfe0c3; font-size:12px; text-align:center; padding:6px; }
+.ribbon a { color:#fff; text-decoration:underline; }
 
-/* preview ribbon */
-.ribbon { background:#1d1d1f; color:#d2d2d7; font-size:12px; text-align:center; padding:7px 40px; position:relative; }
-.ribbon button { position:absolute; right:10px; top:3px; background:none; border:0; color:#d2d2d7; font-size:18px; cursor:pointer; }
-
-/* nav */
-nav.top { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.72); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid rgba(0,0,0,.08); }
-nav.top .wrap { display:flex; align-items:center; justify-content:space-between; height:52px; gap:18px; }
-.logo { height:30px; width:auto; }
-.wordmark { font-weight:700; letter-spacing:-.02em; font-size:17px; }
-.links { display:flex; gap:22px; font-size:13px; }
-.links a { text-decoration:none; color:#424245; }
-.links a:hover { color:var(--accent); }
-
-/* buttons */
-.pill { display:inline-block; background:var(--accent); color:#fff !important; text-decoration:none; border:0; border-radius:980px; padding:12px 22px; font-size:17px; font-weight:500; cursor:pointer; transition:transform .2s, filter .2s; }
-.pill:hover { filter:brightness(1.08); transform:scale(1.02); }
-.pill.ghost { background:transparent; color:var(--accent) !important; box-shadow:inset 0 0 0 1.5px var(--accent); }
-.pill.small { padding:6px 14px; font-size:13px; }
-.ctas { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:26px; }
-
-/* type */
-.eyebrow { font-size:17px; font-weight:600; margin:0 0 8px; letter-spacing:-.01em; }
-h1 { font-size:clamp(44px,8vw,96px); line-height:1.02; letter-spacing:-.035em; margin:0; font-weight:700; }
-h2 { font-size:clamp(34px,5.4vw,64px); line-height:1.05; letter-spacing:-.03em; margin:0 0 18px; font-weight:700; }
-h3 { font-size:22px; letter-spacing:-.02em; margin:0 0 10px; }
-.lead { font-size:clamp(19px,2.4vw,26px); line-height:1.35; color:var(--muted); max-width:720px; margin:18px auto 0; letter-spacing:-.01em; }
-.big-p { font-size:21px; line-height:1.5; color:#424245; }
+nav { position:sticky; top:12px; z-index:40; margin:12px auto 0; max-width:1160px; padding:0 24px; }
+nav .bar { background:rgba(255,253,247,.8); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-radius:999px; box-shadow:0 8px 30px rgba(31,77,54,.10); display:flex; align-items:center; justify-content:space-between; padding:10px 10px 10px 22px; }
+.logo { display:flex; align-items:center; gap:10px; font-family:Fraunces; font-weight:700; font-size:20px; color:var(--green); }
+.logo svg { width:30px; height:30px; }
+.links { display:flex; gap:6px; }
+.links a { padding:9px 16px; border-radius:999px; font-weight:500; font-size:15px; transition:background .25s; }
+.links a:hover { background:var(--sage); }
+.btn { display:inline-block; background:var(--green); color:#fff; border-radius:999px; padding:13px 24px; font-weight:700; font-size:15px; border:0; cursor:pointer; font-family:inherit; transition:transform .25s, background .25s; }
+.btn:hover { background:var(--leaf); transform:translateY(-2px); }
+.btn.sun { background:var(--sun); color:var(--ink); }
+.btn.line { background:transparent; box-shadow:inset 0 0 0 1.5px var(--green); color:var(--green); }
 
 /* hero */
-.hero { min-height:calc(100svh - 52px); display:flex; align-items:center; position:relative; padding:80px 0; background:radial-gradient(ellipse 75% 45% at 50% 48%, color-mix(in srgb, var(--accent) 16%, #fff) 0%, #fff 70%, var(--light) 100%); }
-.hero:not(.photo) h1 { background:linear-gradient(180deg, var(--ink) 30%, color-mix(in srgb, var(--accent) 70%, var(--ink))); -webkit-background-clip:text; background-clip:text; color:transparent; }
-.hero.photo { background-size:cover; background-position:center; color:#fff; }
-.hero.photo .lead { color:rgba(255,255,255,.85); }
-.hero.photo .eyebrow { color:rgba(255,255,255,.8); }
-.hero.photo .pill.ghost { color:#fff !important; box-shadow:inset 0 0 0 1.5px #fff; }
-.status { margin-top:22px; font-size:15px; font-weight:500; }
-.status .dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:7px; vertical-align:middle; }
-.scroll-cue { position:absolute; bottom:18px; left:50%; transform:translateX(-50%); font-size:30px; text-decoration:none; opacity:.6; animation:bob 2s infinite; }
-@keyframes bob { 50% { transform:translate(-50%,6px); } }
+.hero { padding:90px 0 60px; }
+.hero .wrap { display:grid; grid-template-columns:1.05fr 1fr; gap:50px; align-items:center; }
+.tag { display:inline-flex; gap:8px; align-items:center; background:var(--paper); border-radius:999px; padding:7px 14px; font-size:14px; font-weight:500; box-shadow:0 2px 10px rgba(0,0,0,.05); }
+.tag b { color:var(--sun); }
+h1 { font-size:clamp(54px,7.5vw,98px); line-height:.98; margin:22px 0; color:var(--green); }
+h1 em { font-style:italic; color:var(--leaf); }
+.hero p { font-size:20px; color:var(--muted); max-width:500px; }
+.ctas { display:flex; gap:12px; margin-top:30px; flex-wrap:wrap; }
+.blobs { position:relative; aspect-ratio:1; }
+.blob { position:absolute; border-radius:42% 58% 63% 37% / 41% 44% 56% 59%; animation:morph 12s ease-in-out infinite; }
+.blob.a { inset:4% 8% 10% 2%; background:linear-gradient(140deg,#3f8f5a,#1f4d36); }
+.blob.b { width:44%; height:44%; right:0; top:0; background:var(--sun); animation-delay:-4s; opacity:.92; }
+.blob.c { width:34%; height:34%; left:0; bottom:2%; background:var(--sage); animation-delay:-8s; }
+@keyframes morph { 0%,100% { border-radius:42% 58% 63% 37% / 41% 44% 56% 59%; } 33% { border-radius:63% 37% 38% 62% / 52% 61% 39% 48%; } 66% { border-radius:36% 64% 52% 48% / 62% 37% 63% 38%; } }
+.hero-card { position:absolute; left:14%; bottom:14%; background:var(--paper); border-radius:24px; padding:18px 22px; box-shadow:0 20px 40px rgba(0,0,0,.15); display:flex; gap:14px; align-items:center; animation:bob 5s ease-in-out infinite; }
+.hero-card .big { font-family:Fraunces; font-size:34px; color:var(--green); line-height:1; }
+.hero-card small { color:var(--muted); display:block; }
+.hero-emoji { position:absolute; inset:0; display:grid; place-items:center; font-size:clamp(110px,14vw,180px); filter:drop-shadow(0 18px 28px rgba(0,0,0,.25)); animation:bob 6s ease-in-out infinite; }
+@keyframes bob { 50% { transform:translateY(-12px); } }
+.leaf { position:absolute; font-size:26px; animation:fall 9s linear infinite; opacity:.8; }
+@keyframes fall { 0% { transform:translateY(-20px) rotate(0); opacity:0; } 10% { opacity:.8; } 100% { transform:translateY(420px) rotate(260deg); opacity:0; } }
 
-/* bands */
-.band { padding:110px 0; }
-.band.light, .feature.light { background:var(--light); }
-.band.dark, .feature.dark { background:var(--dark); color:#f5f5f7; }
-.band.dark .lead, .feature.dark p { color:#a1a1a6; }
-.band.dark .muted { color:#a1a1a6; }
+.wave { display:block; width:100%; height:80px; }
 
-/* highlight tiles */
-.tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
-.tile { background:#fff; border-radius:22px; padding:30px 26px; }
-.tile .big { font-size:clamp(24px,2.4vw,30px); font-weight:700; letter-spacing:-.03em; line-height:1.1; color:var(--accent); }
-.tile .small { color:var(--muted); margin-top:8px; font-size:17px; }
+section { padding:110px 0; }
+.center { text-align:center; }
+.eyebrow { font-weight:700; color:var(--leaf); letter-spacing:.08em; text-transform:uppercase; font-size:13px; }
+h2 { font-size:clamp(40px,5.5vw,68px); line-height:1.02; margin:12px 0 18px; color:var(--green); }
+h2 em { font-style:italic; color:var(--leaf); }
+.sub { color:var(--muted); font-size:19px; max-width:620px; margin:0 auto; }
 
-/* features */
-.feature { padding:120px 0; overflow:hidden; }
-.split { display:grid; grid-template-columns:1fr 1.1fr; gap:56px; align-items:center; }
-.feature.flip .copy { order:2; }
-.feature p { font-size:19px; }
-.media img { border-radius:24px; width:100%; aspect-ratio:4/3; object-fit:cover; box-shadow:0 30px 60px rgba(0,0,0,.25); }
-.checks { list-style:none; padding:0; margin:22px 0 0; display:grid; gap:10px; font-size:17px; }
-.checks li::before { content:"✓"; color:var(--accent); font-weight:700; margin-right:10px; }
+/* seasons */
+.green-sec { background:var(--green); color:#eef4ea; border-radius:48px; margin:0 16px; }
+.green-sec h2 { color:#fff; } .green-sec h2 em { color:var(--sun); } .green-sec .sub { color:#b8cdb9; } .green-sec .eyebrow { color:var(--sun); }
+.tabs { display:inline-flex; background:rgba(255,255,255,.08); border-radius:999px; padding:6px; margin:34px auto 40px; gap:4px; flex-wrap:wrap; justify-content:center; }
+.tabs button { background:none; border:0; color:#cfe0c3; font:inherit; font-weight:700; padding:12px 24px; border-radius:999px; cursor:pointer; transition:all .3s; }
+.tabs button.on { background:var(--sun); color:var(--ink); }
+.season { display:none; grid-template-columns:repeat(3,1fr); gap:18px; text-align:left; }
+.season.on { display:grid; animation:fade .6s ease; }
+@keyframes fade { from { opacity:0; transform:translateY(16px); } }
+.scard { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); border-radius:28px; padding:30px; }
+.scard .ic { font-size:36px; }
+.scard h3 { font-family:Fraunces; font-size:26px; margin:12px 0 6px; color:#fff; font-weight:500; }
+.scard p { color:#b8cdb9; margin:0; }
 
-/* illustrated feature panel */
-.art { position:relative; aspect-ratio:4/3; border-radius:24px; overflow:hidden; display:grid; place-items:center;
-  background:radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--accent) 75%, #fff) 0%, var(--accent) 45%, color-mix(in srgb, var(--accent) 55%, #000) 100%); box-shadow:0 30px 60px rgba(0,0,0,.25); }
-.art::before { content:""; position:absolute; inset:0; background-image:radial-gradient(rgba(255,255,255,.18) 1px, transparent 1px); background-size:22px 22px; }
-.art-glow { position:absolute; width:70%; aspect-ratio:1; border-radius:50%; background:rgba(255,255,255,.25); filter:blur(60px); top:-20%; right:-15%; }
-.art-icon { position:relative; font-size:clamp(90px,12vw,150px); filter:drop-shadow(0 20px 30px rgba(0,0,0,.3)); animation:float 6s ease-in-out infinite; }
-.art-stat { position:absolute; left:22px; bottom:22px; background:rgba(255,255,255,.88); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-radius:16px; padding:12px 16px; color:#1d1d1f; }
-.art-stat b { display:block; font-size:22px; letter-spacing:-.02em; color:var(--accent); }
-.art-stat span { font-size:13px; color:#6e6e73; }
-@keyframes float { 50% { transform:translateY(-12px) rotate(-3deg); } }
+/* estimator */
+.est { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:44px; }
+.panel { background:var(--paper); border-radius:32px; padding:40px; box-shadow:0 10px 40px rgba(31,77,54,.06); }
+.panel label.t { display:block; font-weight:700; margin:0 0 10px; }
+input[type=range] { width:100%; accent-color:var(--leaf); }
+.opts { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:26px; }
+.opts label input { display:none; }
+.opts label span { display:inline-block; padding:10px 18px; border-radius:999px; background:var(--cream); font-weight:500; cursor:pointer; transition:all .2s; }
+.opts label input:checked + span { background:var(--green); color:#fff; }
+.result { background:linear-gradient(150deg,var(--leaf),var(--green)); color:#fff; display:flex; flex-direction:column; justify-content:center; }
+.result .price { font-family:Fraunces; font-size:clamp(56px,7vw,88px); line-height:1; }
+.result small { color:#cfe0c3; }
 
-/* cards (no-photo services) */
-.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:44px; }
-.card { background:var(--light); border-radius:22px; padding:30px; }
-.card p { color:var(--muted); margin:0; }
-
-/* chips */
-.chips { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:26px; }
-.chip { background:#fff; border-radius:980px; padding:10px 18px; font-weight:600; font-size:15px; }
+/* before / after */
+.ba { position:relative; max-width:920px; margin:44px auto 0; aspect-ratio:16/8; border-radius:36px; overflow:hidden; box-shadow:0 30px 60px rgba(31,77,54,.2); user-select:none; touch-action:none; }
+.ba .side { position:absolute; inset:0; }
+.ba .before { background:
+  radial-gradient(circle at 20% 70%, #b49a62 0 7%, transparent 8%), radial-gradient(circle at 70% 40%, #a98d55 0 9%, transparent 10%), radial-gradient(circle at 45% 80%, #c2a96e 0 6%, transparent 7%),
+  repeating-linear-gradient(80deg,#8fa45b 0 6px,#9aaa63 6px 12px); }
+.ba .after { background:repeating-linear-gradient(90deg,#3f9a55 0 60px,#358a4a 60px 120px); clip-path:inset(0 0 0 50%); }
+.ba .after::after { content:""; position:absolute; left:0; right:0; bottom:0; height:22%; background:linear-gradient(180deg,#6b4a2e,#4d3420); border-top:6px solid #2f6e3e; }
+.ba .handle { position:absolute; top:0; bottom:0; left:50%; width:4px; background:#fff; transform:translateX(-50%); cursor:ew-resize; }
+.ba .handle::after { content:"⟷"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:52px; height:52px; border-radius:50%; background:#fff; display:grid; place-items:center; font-size:22px; color:var(--green); box-shadow:0 6px 20px rgba(0,0,0,.25); }
+.ba .lab { position:absolute; top:20px; background:rgba(0,0,0,.45); color:#fff; padding:6px 14px; border-radius:999px; font-size:14px; font-weight:700; backdrop-filter:blur(6px); }
 
 /* reviews */
-.quotes { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-top:44px; }
-.quote { margin:0; background:var(--light); border-radius:22px; padding:30px; display:flex; flex-direction:column; justify-content:space-between; }
-.quote blockquote { margin:0; font-size:17px; line-height:1.55; }
-.quote figcaption { margin-top:18px; color:var(--muted); font-size:14px; font-weight:600; }
+.masonry { columns:3; column-gap:20px; margin-top:44px; }
+.rev { break-inside:avoid; background:var(--paper); border-radius:28px; padding:28px; margin-bottom:20px; }
+.rev .st { color:var(--sun); letter-spacing:3px; }
+.rev p { font-family:Fraunces; font-size:21px; line-height:1.35; margin:10px 0 14px; }
+.rev small { color:var(--muted); }
 
-/* gallery */
-.gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:12px; margin-top:44px; }
-.shot img { width:100%; aspect-ratio:5/4; object-fit:cover; border-radius:16px; transition:transform .4s; }
-.shot:hover img { transform:scale(1.03); }
+/* area + cta */
+.chipwrap { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:30px; }
+.chip { background:var(--paper); border-radius:999px; padding:10px 18px; font-weight:500; }
+.cta { background:var(--sun); border-radius:48px; margin:0 16px; padding:90px 0; }
+.cta form { display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:10px; margin-top:30px; }
+.cta input { border:0; border-radius:999px; padding:16px 20px; font:inherit; background:var(--paper); }
 
-/* visit */
-.storefront { width:100%; border-radius:24px; aspect-ratio:2/1; object-fit:cover; margin:40px 0 16px; }
-.visit { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
-.panel { background:#fff; border-radius:22px; padding:30px; }
-.hours { width:100%; border-collapse:collapse; font-size:17px; }
-.hours td { padding:9px 0; border-bottom:1px solid #e8e8ed; }
-.hours td:last-child { text-align:right; color:var(--muted); }
-.hours tr.today td { font-weight:700; color:var(--ink); }
-.contact { list-style:none; padding:0; margin:0; display:grid; gap:14px; font-size:17px; }
-.contact span { display:block; font-size:13px; color:var(--muted); }
-.contact a { text-decoration:none; color:var(--accent); font-weight:500; }
-.map { width:100%; height:340px; border:0; border-radius:22px; margin-top:16px; }
-
-/* form */
-.quote-form { display:grid; gap:12px; margin-top:34px; text-align:left; }
-.quote-form input, .quote-form textarea { font:inherit; font-size:17px; padding:15px 16px; border-radius:14px; border:1px solid #424245; background:#1d1d1f; color:#f5f5f7; }
-.quote-form .pill { justify-self:center; margin-top:6px; }
-.quote-form p { text-align:center; }
-
-footer { background:var(--light); color:var(--muted); font-size:12px; padding:30px 0 110px; }
-footer .wrap { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-
-/* mobile bar */
+footer { padding:50px 0 120px; color:var(--muted); font-size:14px; }
+footer .wrap { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
 .mbar { display:none; }
 
-/* hero entrance (pure CSS, runs on load) */
-.rise { animation:rise 1s cubic-bezier(.2,.7,.2,1) both; animation-delay:calc(var(--d) * 120ms); }
-@keyframes rise { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:none; } }
-
-/* reveal animation */
-.js .reveal { opacity:0; transform:translateY(40px) scale(.98); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
-.js .reveal.in { opacity:1; transform:none; }
-@media (prefers-reduced-motion: reduce) { .rise { animation:none; } .js .reveal { opacity:1; transform:none; transition:none; } .scroll-cue { animation:none; } }
-
-@media (max-width:820px) {
+.reveal { opacity:0; transform:translateY(36px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1); }
+.reveal.in { opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; } .blob, .hero-card, .hero-emoji, .leaf { animation:none; } }
+@media (max-width:900px) {
   .links { display:none; }
-  .split, .visit { grid-template-columns:1fr; gap:34px; }
-  .feature.flip .copy { order:0; }
-  .band, .feature { padding:80px 0; }
-  .mbar { display:flex; position:fixed; left:12px; right:12px; bottom:calc(12px + env(safe-area-inset-bottom)); z-index:60; background:rgba(29,29,31,.86); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-radius:18px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.3); }
-  .mbar a { flex:1; text-align:center; color:#fff; text-decoration:none; padding:15px 0; font-weight:600; font-size:15px; }
-  .mbar a:first-child { background:var(--accent); }
-  .tiles { grid-template-columns:1fr 1fr; gap:10px; }
-  .tile { padding:20px 16px; border-radius:18px; }
-  .tile .big { font-size:21px; }
-  .tile .small { font-size:14px; }
+  .hero .wrap, .est { grid-template-columns:1fr; }
+  .season.on { grid-template-columns:1fr; }
+  .masonry { columns:1; }
+  .cta form { grid-template-columns:1fr; }
+  section { padding:80px 0; }
+  .green-sec, .cta { border-radius:32px; margin:0 8px; }
+  .mbar { display:flex; position:fixed; left:12px; right:12px; bottom:calc(12px + env(safe-area-inset-bottom)); z-index:50; border-radius:999px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.25); }
+  .mbar a { flex:1; text-align:center; padding:15px; font-weight:700; background:var(--paper); }
+  .mbar a:first-child { background:var(--green); color:#fff; }
 }
 </style>
 </head>
 <body>
-<script>document.documentElement.classList.add('js')</script>
-<div class="ribbon" id="ribbon">Demo site by Chandler Colvin · fictional business · chandleracolvin.github.io<button aria-label="Dismiss" onclick="this.parentNode.remove()">×</button></div>
-<nav class="top"><div class="wrap"><a href="#top" style="text-decoration:none"><span class="wordmark">Prairie Green</span></a><div class="links"><a href="#services">Services</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#visit">Hours & location</a></div><a class="pill small" href="tel:4055550187">Call</a></div></nav>
+<div class="ribbon">Demo site by <a href="/">Chandler Colvin</a> · Prairie Green is a fictional business</div>
+<nav><div class="bar">
+  <a class="logo" href="#top"><svg viewBox="0 0 32 32"><path d="M16 29C16 18 8 12 3 11c2 10 7 15 13 18z" fill="#3f8f5a"/><path d="M16 29c0-12 6-20 13-24-1 12-6 20-13 24z" fill="#1f4d36"/></svg>Prairie Green</a>
+  <div class="links"><a href="#seasons">Services</a><a href="#estimate">Pricing</a><a href="#results">Results</a><a href="#reviews">Reviews</a></div>
+  <a class="btn" href="#quote">Free estimate</a>
+</div></nav>
 
-<section class="hero" id="top">
-  <div class="wrap center">
-    <p class="eyebrow rise" style="--d:0">Lawn Care &amp; Landscaping · OKC Metro</p>
-    <h1 class="rise" style="--d:1">The best yard<br>on the block.</h1>
-    <p class="lead rise" style="--d:2">Weekly mowing, landscape design and seasonal cleanups across the OKC metro. (Demo business, made up for this sample.)</p>
-    <div class="ctas rise" style="--d:3"><a class="pill" href="tel:4055550187">Call (405) 555-0187</a><a class="pill ghost" href="sms:4055550187">Text us</a><a class="pill ghost" href="https://www.google.com/maps/dir/?api=1&destination=Oklahoma+City,+OK" target="_blank" rel="noopener">Directions</a></div>
-    <p class="status rise" style="--d:4" data-open-status></p>
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <span class="tag reveal"><b>★★★★★</b> 5.0 from 86 neighbors</span>
+    <h1 class="serif reveal">Your yard,<br>but <em>better.</em></h1>
+    <p class="reveal">Weekly mowing, landscape design and seasonal cleanups across the OKC metro. Same crew, same day, every week. No contracts.</p>
+    <div class="ctas reveal"><a class="btn sun" href="#estimate">Price my yard →</a><a class="btn line" href="tel:4055550187">(405) 555-0187</a></div>
   </div>
-  <a class="scroll-cue" href="#highlights" aria-label="Scroll down">&#8964;</a>
-</section><section class="band light" id="highlights"><div class="wrap"><div class="tiles"><div class="tile reveal"><div class="big">Free estimates</div><div class="small">Usually within 24 hours</div></div><div class="tile reveal"><div class="big">No contracts</div><div class="small">Cancel anytime</div></div><div class="tile reveal"><div class="big">Weekly service</div><div class="small">Mow, edge, blow, every visit</div></div><div class="tile reveal"><div class="big">5.0★</div><div class="small">From 86 reviews</div></div></div></div></section>
-<section class="feature dark " id="services">
-  <div class="wrap split">
-    <div class="copy">
-      <p class="eyebrow reveal" style="color:#2f8f4e">Lawn care</p>
-      <h2 class="reveal">Sharp lines.<br>Every week.</h2>
-      <p class="reveal">Mowing, edging and cleanup on a schedule you can set and forget.</p>
-      <ul class="checks reveal"><li>Weekly or bi-weekly</li><li>Edging &amp; trimming</li><li>Clippings blown clean</li></ul>
+  <div class="blobs reveal" aria-hidden="true">
+    <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
+    <div class="hero-emoji">🌿</div>
+    <span class="leaf" style="left:20%;top:0;animation-delay:0s">🍃</span><span class="leaf" style="left:60%;top:0;animation-delay:3s">🍂</span><span class="leaf" style="left:80%;top:0;animation-delay:6s">🍃</span>
+    <div class="hero-card"><div class="big">24h</div><div><b>Free estimates</b><small>Most quotes back within a day</small></div></div>
+  </div>
+</div></header>
+
+<svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40c240-40 480 40 720 20s480-50 720-10v30H0z" fill="#1f4d36" opacity=".08"/></svg>
+
+<section id="seasons" class="green-sec"><div class="wrap center">
+  <div class="eyebrow reveal">All year long</div>
+  <h2 class="serif reveal">Care for <em>every season.</em></h2>
+  <p class="sub reveal">Oklahoma weather keeps lawns guessing. We plan around it.</p>
+  <div class="tabs reveal" id="tabs"><button class="on" data-s="spring">🌸 Spring</button><button data-s="summer">☀️ Summer</button><button data-s="fall">🍂 Fall</button><button data-s="winter">❄️ Winter</button></div>
+  <div class="season on" id="spring"><div class="scard"><div class="ic">🌱</div><h3>Aeration &amp; seeding</h3><p>Wake up tired turf and fill bare patches before the heat hits.</p></div><div class="scard"><div class="ic">🌷</div><h3>Bed refresh</h3><p>New mulch, crisp edges and fresh color in every bed.</p></div><div class="scard"><div class="ic">🧹</div><h3>Spring cleanup</h3><p>Winter debris out, first cut of the season in.</p></div></div>
+  <div class="season" id="summer"><div class="scard"><div class="ic">🚜</div><h3>Weekly mowing</h3><p>Mow, edge and blow. Same crew, same day, every week.</p></div><div class="scard"><div class="ic">💧</div><h3>Irrigation checks</h3><p>Sprinkler tune-ups so you're not watering the sidewalk.</p></div><div class="scard"><div class="ic">✂️</div><h3>Shrub trimming</h3><p>Clean shapes that keep your house looking sharp.</p></div></div>
+  <div class="season" id="fall"><div class="scard"><div class="ic">🍁</div><h3>Leaf removal</h3><p>Bagged and hauled, or mulched back into the lawn.</p></div><div class="scard"><div class="ic">🌾</div><h3>Overseeding</h3><p>The best time of year to thicken up fescue lawns.</p></div><div class="scard"><div class="ic">🪴</div><h3>Fall plantings</h3><p>Trees and shrubs root best before winter.</p></div></div>
+  <div class="season" id="winter"><div class="scard"><div class="ic">🌲</div><h3>Pruning</h3><p>Dormant-season cuts for healthier spring growth.</p></div><div class="scard"><div class="ic">🎄</div><h3>Holiday lighting</h3><p>Install, takedown and storage. One less ladder for you.</p></div><div class="scard"><div class="ic">📋</div><h3>Spring planning</h3><p>Design consults to get on the books before the rush.</p></div></div>
+</div></section>
+
+<section id="estimate"><div class="wrap center">
+  <div class="eyebrow reveal">Instant estimate</div>
+  <h2 class="serif reveal">What will it <em>cost?</em></h2>
+  <p class="sub reveal">Slide to your yard size for a ballpark weekly price. Final quotes are free.</p>
+  <div class="est reveal" style="text-align:left">
+    <div class="panel">
+      <label class="t">Yard size: <span id="sizeLbl">¼ acre</span></label>
+      <input type="range" id="size" min="1" max="8" value="2" style="margin-bottom:28px">
+      <label class="t">How often?</label>
+      <div class="opts" id="freq"><label><input type="radio" name="f" value="1" checked><span>Weekly</span></label><label><input type="radio" name="f" value="1.15"><span>Every 2 weeks</span></label><label><input type="radio" name="f" value="1.35"><span>One-time</span></label></div>
+      <label class="t">Add-ons</label>
+      <div class="opts" id="adds"><label><input type="checkbox" value="15"><span>Edging</span></label><label><input type="checkbox" value="20"><span>Shrub trim</span></label><label><input type="checkbox" value="25"><span>Weed control</span></label></div>
     </div>
-    <div class="media reveal"><div class="art"><div class="art-glow"></div><div class="art-icon">🌱</div><div class="art-stat"><b>Every week</b><span>Same crew, same day</span></div></div></div>
-  </div>
-</section>
-<section class="feature light flip" id="f1">
-  <div class="wrap split">
-    <div class="copy">
-      <p class="eyebrow reveal" style="color:#2f8f4e">Landscape design</p>
-      <h2 class="reveal">Built for Oklahoma weather.</h2>
-      <p class="reveal">Beds, shrubs and trees chosen to handle hot summers and windy springs.</p>
-      <ul class="checks reveal"><li>Plant selection</li><li>Mulch &amp; rock</li><li>Drainage fixes</li></ul>
+    <div class="panel result">
+      <small>Estimated per visit</small>
+      <div class="price" id="price">$45–55</div>
+      <p style="color:#cfe0c3;margin:14px 0 26px">Sample pricing for this demo. Real quotes depend on terrain, gates and slopes.</p>
+      <a class="btn sun" href="#quote" style="justify-self:start;align-self:flex-start">Lock in a free quote</a>
     </div>
-    <div class="media reveal"><div class="art"><div class="art-glow"></div><div class="art-icon">🌳</div><div class="art-stat"><b>Native plants</b><span>Built for OK weather</span></div></div></div>
   </div>
-</section>
-<section class="feature dark " id="f2">
-  <div class="wrap split">
-    <div class="copy">
-      <p class="eyebrow reveal" style="color:#2f8f4e">Seasonal cleanups</p>
-      <h2 class="reveal">Spring ready.<br>Fall clean.</h2>
-      <p class="reveal">Leaf removal, pruning and bed refreshes twice a year.</p>
-      
-    </div>
-    <div class="media reveal"><div class="art"><div class="art-glow"></div><div class="art-icon">🍂</div><div class="art-stat"><b>2x a year</b><span>Spring &amp; fall cleanups</span></div></div></div>
+</div></section>
+
+<section id="results" style="padding-top:0"><div class="wrap center">
+  <div class="eyebrow reveal">The difference</div>
+  <h2 class="serif reveal">Drag to see <em>the glow-up.</em></h2>
+  <div class="ba reveal" id="ba"><div class="side before"></div><div class="side after" id="after"></div><span class="lab" style="left:20px">Before</span><span class="lab" style="right:20px">After</span><div class="handle" id="handle"></div></div>
+</div></section>
+
+<section id="reviews" style="padding-top:0"><div class="wrap center">
+  <div class="eyebrow reveal">Neighbors say</div>
+  <h2 class="serif reveal">Loved on <em>every street.</em></h2>
+  <div class="masonry" style="text-align:left">
+    <div class="rev reveal"><div class="st">★★★★★</div><p>They showed up when they said they would, every single week.</p><small>Demo customer · Edmond</small></div>
+    <div class="rev reveal"><div class="st">★★★★★</div><p>Our front beds have never looked this good. The neighbors keep asking who we use.</p><small>Demo customer · Nichols Hills</small></div>
+    <div class="rev reveal"><div class="st">★★★★★</div><p>No contract, fair price, photo after every visit.</p><small>Demo customer · Moore</small></div>
+    <div class="rev reveal"><div class="st">★★★★★</div><p>Overseeded in October and the lawn came back thick in spring.</p><small>Demo customer · Yukon</small></div>
+    <div class="rev reveal"><div class="st">★★★★★</div><p>They even text before they come so I can let the dog in.</p><small>Demo customer · Norman</small></div>
+    <div class="rev reveal"><div class="st">★★★★★</div><p>Best money we spend all summer.</p><small>Demo customer · OKC</small></div>
   </div>
-</section>
-<section class="band light" id="about">
-  <div class="wrap narrow center">
-    <p class="eyebrow reveal" style="color:#2f8f4e">About us</p>
-    <h2 class="reveal">Local crews. Real care.</h2>
-    <p class="reveal big-p">This is a demo site built by Chandler Colvin to show what a local business website can look like. Prairie Green Lawn &amp; Landscape is not a real business.</p>
-    <div class="chips reveal"><span class="chip">Insured</span><span class="chip">On-time crews</span><span class="chip">Photo updates</span><span class="chip">No contracts</span></div>
-  </div>
-</section>
-<section class="band" id="reviews">
-  <div class="wrap">
-    <p class="eyebrow center reveal" style="color:#2f8f4e">Reviews</p>
-    <h2 class="center reveal">What our customers say.</h2>
-    <p class="center muted reveal">5.0★ average from 86 Google reviews</p>
-    <div class="quotes"><figure class="quote reveal"><blockquote>“Sample review: they showed up when they said they would, every single week.”</blockquote><figcaption>Demo customer</figcaption></figure><figure class="quote reveal"><blockquote>“Sample review: our front beds have never looked this good.”</blockquote><figcaption>Demo customer</figcaption></figure></div>
-  </div>
-</section>
-<section class="band light" id="visit">
-  <div class="wrap">
-    <p class="eyebrow center reveal" style="color:#2f8f4e">Visit</p>
-    <h2 class="center reveal">Come see us.</h2>
-    
-    <div class="visit">
-      <div class="panel reveal">
-        <h3>Hours</h3>
-        <table class="hours"><tr><td>Monday – Saturday</td><td>7 AM – 7 PM</td></tr><tr><td>Sunday</td><td>Closed</td></tr></table>
-        <p class="status" data-open-status></p>
-      </div>
-      <div class="panel reveal">
-        <h3>Contact</h3>
-        <ul class="contact"><li><span>Call or text</span><a href="tel:4055550187">(405) 555-0187</a></li><li><span>Address</span><a href="https://www.google.com/maps/dir/?api=1&destination=Oklahoma+City,+OK" target="_blank" rel="noopener">Serving the Oklahoma City metro</a></li></ul>
-        
-      </div>
-    </div>
-    <iframe class="map reveal" loading="lazy" title="Map" src="https://www.google.com/maps?q=Oklahoma+City,+OK&output=embed"></iframe>
-  </div>
-</section>
-<section class="band dark" id="quote">
-  <div class="wrap narrow center">
-    <p class="eyebrow reveal" style="color:#2f8f4e">Request a quote</p>
-    <h2 class="reveal">Tell us what's going on.</h2>
-    <p class="lead reveal">We'll get back to you with an honest estimate.</p>
-    <form class="quote-form reveal" data-target="sms:4055550187">
-      <input name="name" placeholder="Your name" required>
-      <input name="phone" placeholder="Phone" required>
-      <input name="vehicle" placeholder="Year, make & model (optional)">
-      <textarea name="msg" rows="4" placeholder="What do you need help with?" required></textarea>
-      <button class="pill" type="submit">Send request</button>
-      <p class="muted small-p">Opens a text message to the shop.</p>
-    </form>
-  </div>
-</section>
-<footer><div class="wrap"><span>© 2026 Prairie Green Lawn &amp; Landscape · Serving the Oklahoma City metro · (405) 555-0187</span><span>Preview concept by Chandler Colvin</span></div></footer>
-<div class="mbar"><a href="tel:4055550187">Call</a><a href="sms:4055550187">Text</a><a href="https://www.google.com/maps/dir/?api=1&destination=Oklahoma+City,+OK" target="_blank" rel="noopener">Directions</a></div>
+  <div class="eyebrow reveal" style="margin-top:60px">Proudly serving</div>
+  <div class="chipwrap reveal"><span class="chip">📍 Oklahoma City</span><span class="chip">Edmond</span><span class="chip">Norman</span><span class="chip">Moore</span><span class="chip">Yukon</span><span class="chip">Mustang</span><span class="chip">Nichols Hills</span><span class="chip">The Village</span><span class="chip">Midwest City</span></div>
+</div></section>
+
+<section class="cta" id="quote"><div class="wrap center">
+  <h2 class="serif reveal" style="color:var(--ink)">Get your <em style="color:var(--green)">free estimate.</em></h2>
+  <p class="sub reveal" style="color:#5a4a20">Tell us where you are. We'll text you a quote, usually within a day.</p>
+  <form class="reveal" id="qf"><input name="name" placeholder="Name" required><input name="phone" placeholder="Phone" required><input name="addr" placeholder="Street or neighborhood" required><button class="btn">Send →</button></form>
+</div></section>
+
+<footer><div class="wrap"><span>© 2026 Prairie Green Lawn &amp; Landscape (fictional) · Mon–Sat 7 AM – 7 PM · (405) 555-0187</span><span>Demo built by <a href="/" style="text-decoration:underline">Chandler Colvin</a></span></div></footer>
+<div class="mbar"><a href="#quote">Free estimate</a><a href="tel:4055550187">Call</a></div>
+
 <script>
-// Reveal sections as they scroll into view
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (Array.from(el.parentNode.children).indexOf(el) % 6) * 70 + 'ms'; io.observe(el); });
-
-// Open-now status (Oklahoma City time)
-const WEEK = {"sun": null, "mon": "07:00-19:00", "tue": "07:00-19:00", "wed": "07:00-19:00", "thu": "07:00-19:00", "fri": "07:00-19:00", "sat": "07:00-19:00"};
-(function () {
-  const days = ['sun','mon','tue','wed','thu','fri','sat'];
-  const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }));
-  const rows = document.querySelectorAll('.hours tr');
-  if (!WEEK) return;
-  const fmt = t => { let [h, m] = t.split(':').map(Number); const ap = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12; return h + (m ? ':' + String(m).padStart(2, '0') : '') + ' ' + ap; };
-  const today = WEEK[days[now.getDay()]];
-  const mins = now.getHours() * 60 + now.getMinutes();
-  let text, color;
-  if (today) {
-    const [o, c] = today.split('-'); const om = +o.split(':')[0] * 60 + +o.split(':')[1]; const cm = +c.split(':')[0] * 60 + +c.split(':')[1];
-    if (mins >= om && mins < cm) { text = 'Open now · until ' + fmt(c); color = '#30d158'; }
-    else if (mins < om) { text = 'Closed · opens today at ' + fmt(o); color = '#ff9f0a'; }
-  }
-  if (!text) {
-    for (let i = 1; i <= 7; i++) { const d = days[(now.getDay() + i) % 7]; if (WEEK[d]) { text = 'Closed · opens ' + (i === 1 ? 'tomorrow' : d[0].toUpperCase() + d.slice(1)) + ' at ' + fmt(WEEK[d].split('-')[0]); break; } }
-    color = '#ff453a';
-  }
-  document.querySelectorAll('[data-open-status]').forEach(el => el.innerHTML = '<span class="dot" style="background:' + color + '"></span>' + text);
-})();
-
-// Quote form -> email or text
-document.querySelectorAll('.quote-form').forEach(f => f.addEventListener('submit', e => {
-  e.preventDefault();
-  const v = Object.fromEntries(new FormData(f));
-  const body = `Name: ${v.name}\nPhone: ${v.phone}\nVehicle: ${v.vehicle || '-'}\n\n${v.msg}`;
-  const t = f.dataset.target;
-  location.href = t.startsWith('mailto:') ? `${t}?subject=${encodeURIComponent('Quote request from ' + v.name)}&body=${encodeURIComponent(body)}` : `${t}?&body=${encodeURIComponent(body)}`;
-}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>{el.style.transitionDelay=(Array.from(el.parentNode.children).indexOf(el)%6)*90+'ms';io.observe(el);});
+// season tabs
+document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.season').forEach(s=>s.classList.toggle('on',s.id===b.dataset.s));});
+// estimator
+const sizes=['⅛ acre','¼ acre','⅜ acre','½ acre','⅝ acre','¾ acre','⅞ acre','1 acre'];
+function calc(){const s=+size.value,f=+document.querySelector('#freq input:checked').value,a=[...document.querySelectorAll('#adds input:checked')].reduce((t,x)=>t+ +x.value,0);
+ const base=25+s*12;const lo=Math.round((base*f+a)/5)*5,hi=lo+10;document.getElementById('sizeLbl').textContent=sizes[s-1];document.getElementById('price').textContent='$'+lo+'–'+hi;}
+const size=document.getElementById('size');document.querySelectorAll('#size,#freq input,#adds input').forEach(x=>x.addEventListener('input',calc));calc();
+// before/after
+const ba=document.getElementById('ba'),after=document.getElementById('after'),hd=document.getElementById('handle');let drag=false;
+function setX(x){const r=ba.getBoundingClientRect(),p=Math.max(0,Math.min(100,(x-r.left)/r.width*100));after.style.clipPath=`inset(0 0 0 ${p}%)`;hd.style.left=p+'%';}
+ba.addEventListener('pointerdown',e=>{drag=true;setX(e.clientX);});addEventListener('pointermove',e=>drag&&setX(e.clientX));addEventListener('pointerup',()=>drag=false);
+// quote form -> text
+document.getElementById('qf').addEventListener('submit',e=>{e.preventDefault();const v=Object.fromEntries(new FormData(e.target));location.href='sms:4055550187?&body='+encodeURIComponent(`Hi Prairie Green! I'd like a free estimate. ${v.name}, ${v.phone}, ${v.addr}`);});
 </script>
 </body>
 </html>
