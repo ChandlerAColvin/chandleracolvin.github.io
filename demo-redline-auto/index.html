@@ -96,9 +96,16 @@ section { padding:120px 0; }
 .step h3 { font-family:Oswald; text-transform:uppercase; font-size:22px; margin:0 0 6px; }
 .step p { color:var(--muted); margin:0; }
 
+.photoband { position:relative; padding:0; height:min(80vh,640px); overflow:hidden; display:flex; align-items:flex-end; }
+.photoband img { position:absolute; left:0; top:-10%; width:100%; height:120%; object-fit:cover; will-change:transform; }
+.photoband::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(11,11,12,.15) 30%,rgba(11,11,12,.92)); }
+.photoband .wrap { position:relative; z-index:2; padding-bottom:70px; width:100%; }
+.photoband h2 { font-size:clamp(44px,7vw,96px); margin:12px 0 0; }
+.photoband h2 span { color:var(--red); }
+
 /* booking */
 .book { background:linear-gradient(115deg,#141416 0 60%,#1a0504 60%); border:1px solid var(--line); display:grid; grid-template-columns:1fr 1.2fr; }
-.book .side { padding:56px; }
+.book .side { padding:56px; background:linear-gradient(180deg,rgba(20,20,22,.80),rgba(20,20,22,.95)),url('https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=900&h=1100&fit=crop&q=75&auto=format') center/cover; }
 .book .side h2 { font-size:clamp(40px,5vw,64px); margin:10px 0 18px; }
 .book .side p { color:var(--muted); }
 .book form { padding:56px; display:grid; gap:22px; border-left:1px solid var(--line); }
@@ -215,6 +222,8 @@ footer .wrap { display:flex; justify-content:space-between; gap:20px; flex-wrap:
   </div>
 </div></section>
 
+<section class="photoband"><img src="https://images.unsplash.com/photo-1786198984387-b63cdf520602?w=2000&h=1000&fit=crop&q=75&auto=format" alt="Car on a lift in the shop" loading="lazy"><div class="wrap"><div class="kicker">Inside the shop</div><h2 class="disp">Dealer-level tools.<br><span>Neighborhood prices.</span></h2></div></section>
+
 <section id="book"><div class="wrap">
   <div class="book reveal">
     <div class="side"><div class="kicker">Online booking</div><h2 class="disp">Book in<br>30 seconds.</h2><p>Pick a service and a time. We'll text to confirm within 15 minutes during business hours.</p><p style="margin-top:28px"><a class="btn ghost" href="tel:4055550142">Or call (405) 555-0142</a></p></div>
@@ -254,6 +263,8 @@ document.querySelectorAll('.reveal,#steps').forEach((el,i)=>{el.style.transition
 const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,to=+el.dataset.to,dec=+(el.dataset.dec||0),t0=performance.now();
  (function f(t){const p=Math.min(1,(t-t0)/1600),v=to*(1-Math.pow(1-p,3));el.textContent=dec?v.toFixed(dec):Math.round(v).toLocaleString();if(p<1)requestAnimationFrame(f);})(t0);co.unobserve(el);}),{threshold:.6});
 document.querySelectorAll('.count').forEach(el=>co.observe(el));
+// parallax photo band
+const pb=document.querySelector('.photoband img');addEventListener('scroll',()=>{const r=pb.parentNode.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)pb.style.transform='translateY('+(-r.top*0.12)+'px)';},{passive:true});
 // booking chips
 const mk=(id,name,arr,first)=>document.getElementById(id).innerHTML=arr.map((v,i)=>`<label><input type="radio" name="${name}" value="${v}" ${i===0&&first?'checked':''}><span>${v}</span></label>`).join('');
 mk('svcchips','service',['Diagnostics','Brakes','Oil change','A/C','Suspension','Other'],true);

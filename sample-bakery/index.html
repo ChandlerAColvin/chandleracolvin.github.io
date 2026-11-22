@@ -71,7 +71,10 @@ section { padding:110px 0; }
 .rail::-webkit-scrollbar { display:none; }
 .bake { flex:0 0 280px; scroll-snap-align:start; background:#fff; padding:14px 14px 22px; box-shadow:0 10px 30px rgba(59,36,24,.07); transition:transform .4s; }
 .bake:hover { transform:translateY(-6px) rotate(-1deg); }
-.bake .img { aspect-ratio:1; display:grid; place-items:center; font-size:96px; position:relative; }
+.bake .img { aspect-ratio:1; position:relative; overflow:hidden; }
+.bake .img img { width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.2,.7,.2,1); }
+.bake:hover .img img { transform:scale(1.06); }
+.bake .soldout { z-index:2; }
 .bake .soldout { position:absolute; top:12px; left:12px; background:var(--cocoa); color:var(--cream); font-size:11px; letter-spacing:.2em; padding:5px 10px; text-transform:uppercase; }
 .bake h3 { font-family:"Cormorant Garamond"; font-size:26px; font-weight:600; margin:16px 6px 2px; }
 .bake p { color:var(--muted); margin:0 6px; font-size:15px; display:flex; justify-content:space-between; }
@@ -111,8 +114,9 @@ section { padding:110px 0; }
 
 /* grid */
 .gram { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
-.gram div { aspect-ratio:1; display:grid; place-items:center; font-size:64px; overflow:hidden; transition:transform .5s; cursor:pointer; }
-.gram div:hover { transform:scale(.96); }
+.gram div { aspect-ratio:1; overflow:hidden; cursor:pointer; }
+.gram img { width:100%; height:100%; object-fit:cover; transition:transform .9s cubic-bezier(.2,.7,.2,1), filter .5s; }
+.gram div:hover img { transform:scale(1.08); filter:brightness(.85); }
 
 /* visit */
 .visit .wrap { display:grid; grid-template-columns:1fr 1fr; gap:60px; }
@@ -154,9 +158,9 @@ footer { text-align:center; padding:60px 0 110px; color:var(--muted); font-size:
     <div class="ctas reveal"><a class="btn fill" href="#today">Today's bakes</a><a class="btn" href="#cakes">Order a cake</a></div>
   </div>
   <div class="plate reveal">
-    <div class="arch"><div class="pastry">🥐</div></div>
+    <div class="arch"><img src="https://images.unsplash.com/photo-1681218079567-35aef7c8e7e4?w=900&h=1125&fit=crop&q=75&auto=format" alt="Butter croissant" style="width:100%;height:100%;object-fit:cover"></div>
     <svg class="stamp" viewBox="0 0 150 150" aria-hidden="true"><defs><path id="c" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs><circle cx="75" cy="75" r="74" fill="#fbf6ef"/><text><textPath href="#c">Fresh daily · baked by hand · since 1998 ·</textPath></text></svg>
-    <div class="stamp-core">🌾</div>
+    <div class="stamp-core"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#b5622d" stroke-width="1.4" stroke-linecap="round"><path d="M12 22V8M12 8c-2-1-3-3-3-5 2 0 3 2 3 5zm0 0c2-1 3-3 3-5-2 0-3 2-3 5zM12 13c-2-1-3-3-3-5 2 0 3 2 3 5zm0 0c2-1 3-3 3-5-2 0-3 2-3 5zM12 18c-2-1-3-3-3-5 2 0 3 2 3 5zm0 0c2-1 3-3 3-5-2 0-3 2-3 5z"/></svg></div>
     <div class="note"><span class="script">out of the oven</span><small>every morning by 7 AM</small></div>
   </div>
 </div></section>
@@ -166,12 +170,12 @@ footer { text-align:center; padding:60px 0 110px; color:var(--muted); font-size:
 <section id="today">
   <div class="wrap title"><span class="script reveal">fresh this morning</span><h2 class="reveal">Today's bakes</h2><p class="reveal">What's on the counter right now. Popular items sell out by noon.</p></div>
   <div class="rail" id="rail">
-    <div class="bake reveal"><div class="img" style="background:#f5e1cf">🥖</div><h3>Country Sourdough</h3><p><span>48-hour ferment</span><b>$9</b></p></div>
-    <div class="bake reveal"><div class="img" style="background:#f8e6c9">🥐</div><h3>Butter Croissant</h3><p><span>French butter</span><b>$4.50</b></p></div>
-    <div class="bake reveal"><div class="img" style="background:#f3dccf"><span class="soldout">Sold out</span>🍩</div><h3>Morning Bun</h3><p><span>Orange &amp; cinnamon</span><b>$5</b></p></div>
-    <div class="bake reveal"><div class="img" style="background:#eee3cf">🥧</div><h3>Pecan Pie</h3><p><span>Whole, 9-inch</span><b>$32</b></p></div>
-    <div class="bake reveal"><div class="img" style="background:#f6dbe0">🧁</div><h3>Strawberry Cupcake</h3><p><span>Fresh berry buttercream</span><b>$4</b></p></div>
-    <div class="bake reveal"><div class="img" style="background:#efe7d6">🍪</div><h3>Brown Butter Cookie</h3><p><span>Sea salt flakes</span><b>$3</b></p></div>
+    <div class="bake reveal"><div class="img" style="background:#f5e1cf"><img src="https://images.unsplash.com/photo-1585478259844-06d7b756b082?w=600&h=600&fit=crop&q=75&auto=format" alt="Country sourdough" loading="lazy"></div><h3>Country Sourdough</h3><p><span>48-hour ferment</span><b>$9</b></p></div>
+    <div class="bake reveal"><div class="img" style="background:#f8e6c9"><img src="https://images.unsplash.com/photo-1763207291707-e2cf471ed72b?w=600&h=600&fit=crop&q=75&auto=format" alt="Butter croissants" loading="lazy"></div><h3>Butter Croissant</h3><p><span>French butter</span><b>$4.50</b></p></div>
+    <div class="bake reveal"><div class="img" style="background:#f3dccf"><span class="soldout">Sold out</span><img src="https://images.unsplash.com/photo-1686207855146-c3ffe2166d40?w=600&h=600&fit=crop&q=75&auto=format" alt="Morning buns" loading="lazy"></div><h3>Morning Bun</h3><p><span>Orange &amp; cinnamon</span><b>$5</b></p></div>
+    <div class="bake reveal"><div class="img" style="background:#eee3cf"><img src="https://images.unsplash.com/photo-1767065584339-5d58fb4d8a04?w=600&h=600&fit=crop&q=75&auto=format" alt="Pecan pie" loading="lazy"></div><h3>Pecan Pie</h3><p><span>Whole, 9-inch</span><b>$32</b></p></div>
+    <div class="bake reveal"><div class="img" style="background:#f6dbe0"><img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=600&h=600&fit=crop&q=75&auto=format" alt="Strawberry cupcake" loading="lazy"></div><h3>Strawberry Cupcake</h3><p><span>Fresh berry buttercream</span><b>$4</b></p></div>
+    <div class="bake reveal"><div class="img" style="background:#efe7d6"><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&fit=crop&q=75&auto=format" alt="Brown butter cookies" loading="lazy"></div><h3>Brown Butter Cookie</h3><p><span>Sea salt flakes</span><b>$3</b></p></div>
   </div>
   <div class="railnav"><button onclick="rail.scrollBy({left:-300,behavior:'smooth'})" aria-label="Previous">←</button><button onclick="rail.scrollBy({left:300,behavior:'smooth'})" aria-label="Next">→</button></div>
 </section>
@@ -193,7 +197,7 @@ footer { text-align:center; padding:60px 0 110px; color:var(--muted); font-size:
     <p class="first">Every loaf starts the night before. Our sourdough ferments for 48 hours, our croissants are folded by hand over three days, and our ovens fire up at 4 AM so the first bake is cooling when you walk in.</p>
     <p>We've been on Maple Street since 1998, using Oklahoma-milled flour, local eggs and real butter. No shortcuts, no mixes. Just good bread, made the slow way.</p>
   </div>
-  <blockquote class="pull reveal">"The kind of bakery you plan your Saturday around."<small>Demo customer review</small></blockquote>
+  <div class="reveal"><img src="https://images.unsplash.com/photo-1604908552986-eb22824b2150?w=900&h=700&fit=crop&q=75&auto=format" alt="Bread on the bakery counter" loading="lazy" style="width:100%;aspect-ratio:9/7;object-fit:cover;border-radius:999px 999px 0 0;margin-bottom:34px;display:block"><blockquote class="pull">"The kind of bakery you plan your Saturday around."<small>Demo customer review</small></blockquote></div>
 </div></section>
 
 <section class="order" id="cakes"><div class="wrap">
@@ -212,8 +216,7 @@ footer { text-align:center; padding:60px 0 110px; color:var(--muted); font-size:
 <section style="padding:0">
   <div class="title" style="padding-top:110px"><span class="script reveal">@maplestreetbakes</span><h2 class="reveal">From the oven</h2></div>
   <div class="gram reveal">
-    <div style="background:#f5e1cf">🥖</div><div style="background:#f6dbe0">🎂</div><div style="background:#f8e6c9">🥐</div><div style="background:#e9dcc6">☕</div>
-    <div style="background:#f3dccf">🧁</div><div style="background:#efe7d6">🥧</div><div style="background:#f5e1cf">🍪</div><div style="background:#f8e6c9">🍞</div>
+    <div><img src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?w=500&h=500&fit=crop&q=75&auto=format" alt="Bakery photo" loading="lazy"></div><div><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&h=500&fit=crop&q=75&auto=format" alt="Bakery photo" loading="lazy"></div><div><img src="https://images.unsplash.com/photo-1623334044303-241021148842?w=500&h=500&fit=crop&q=75&auto=format" alt="Bakery photo" loading="lazy"></div><div><img src="https://images.unsplash.com/photo-1763647872237-c76e660cf38b?w=500&h=500&fit=crop&q=75&auto=format" alt="Bakery photo" loading="lazy"></div><div><img src="https://images.unsplash.com/photo-1694632288834-17d86b340745?w=500&h=500&fit=crop&q=75&auto=format" alt="Bakery photo" loading="lazy"></div><div><img src="https://images.unsplash.com/photo-1604413191066-4dd20bedf486?w=500&h=500&fit=crop&q=75&auto=format" alt="Bakery photo" loading="lazy"></div><div><img src="https://images.unsplash.com/photo-1549413468-cd78edb7e75c?w=500&h=500&fit=crop&q=75&auto=format" alt="Bakery photo" loading="lazy"></div><div><img src="https://images.unsplash.com/photo-1726981897420-0778c14deedf?w=500&h=500&fit=crop&q=75&auto=format" alt="Bakery photo" loading="lazy"></div>
   </div>
 </section>
 

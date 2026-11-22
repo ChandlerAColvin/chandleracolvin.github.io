@@ -49,6 +49,8 @@ h1 em { font-style:italic; color:var(--leaf); }
 .hero-card { position:absolute; left:14%; bottom:14%; background:var(--paper); border-radius:24px; padding:18px 22px; box-shadow:0 20px 40px rgba(0,0,0,.15); display:flex; gap:14px; align-items:center; animation:bob 5s ease-in-out infinite; }
 .hero-card .big { font-family:Fraunces; font-size:34px; color:var(--green); line-height:1; }
 .hero-card small { color:var(--muted); display:block; }
+.hero-photo { position:absolute; inset:4% 8% 10% 2%; border-radius:42% 58% 63% 37% / 41% 44% 56% 59%; overflow:hidden; animation:morph 12s ease-in-out infinite; box-shadow:0 30px 60px rgba(31,77,54,.3); }
+.hero-photo img { width:100%; height:100%; object-fit:cover; transform:scale(1.08); }
 .hero-emoji { position:absolute; inset:0; display:grid; place-items:center; font-size:clamp(110px,14vw,180px); filter:drop-shadow(0 18px 28px rgba(0,0,0,.25)); animation:bob 6s ease-in-out infinite; }
 @keyframes bob { 50% { transform:translateY(-12px); } }
 .leaf { position:absolute; font-size:26px; animation:fall 9s linear infinite; opacity:.8; }
@@ -72,6 +74,8 @@ h2 em { font-style:italic; color:var(--leaf); }
 .season { display:none; grid-template-columns:repeat(3,1fr); gap:18px; text-align:left; }
 .season.on { display:grid; animation:fade .6s ease; }
 @keyframes fade { from { opacity:0; transform:translateY(16px); } }
+.sphoto { grid-column:1/-1; border-radius:28px; overflow:hidden; aspect-ratio:21/8; }
+.sphoto img { width:100%; height:100%; object-fit:cover; }
 .scard { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); border-radius:28px; padding:30px; }
 .scard .ic { font-size:36px; }
 .scard h3 { font-family:Fraunces; font-size:26px; margin:12px 0 6px; color:#fff; font-weight:500; }
@@ -93,11 +97,8 @@ input[type=range] { width:100%; accent-color:var(--leaf); }
 /* before / after */
 .ba { position:relative; max-width:920px; margin:44px auto 0; aspect-ratio:16/8; border-radius:36px; overflow:hidden; box-shadow:0 30px 60px rgba(31,77,54,.2); user-select:none; touch-action:none; }
 .ba .side { position:absolute; inset:0; }
-.ba .before { background:
-  radial-gradient(circle at 20% 70%, #b49a62 0 7%, transparent 8%), radial-gradient(circle at 70% 40%, #a98d55 0 9%, transparent 10%), radial-gradient(circle at 45% 80%, #c2a96e 0 6%, transparent 7%),
-  repeating-linear-gradient(80deg,#8fa45b 0 6px,#9aaa63 6px 12px); }
-.ba .after { background:repeating-linear-gradient(90deg,#3f9a55 0 60px,#358a4a 60px 120px); clip-path:inset(0 0 0 50%); }
-.ba .after::after { content:""; position:absolute; left:0; right:0; bottom:0; height:22%; background:linear-gradient(180deg,#6b4a2e,#4d3420); border-top:6px solid #2f6e3e; }
+.ba .before { background:url('https://images.unsplash.com/photo-1647858729557-db19d46e19be?w=1400&h=700&fit=crop&q=75&auto=format') center/cover; }
+.ba .after { background:url('https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1400&h=700&fit=crop&q=75&auto=format') center/cover; clip-path:inset(0 0 0 50%); }
 .ba .handle { position:absolute; top:0; bottom:0; left:50%; width:4px; background:#fff; transform:translateX(-50%); cursor:ew-resize; }
 .ba .handle::after { content:"⟷"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:52px; height:52px; border-radius:50%; background:#fff; display:grid; place-items:center; font-size:22px; color:var(--green); box-shadow:0 6px 20px rgba(0,0,0,.25); }
 .ba .lab { position:absolute; top:20px; background:rgba(0,0,0,.45); color:#fff; padding:6px 14px; border-radius:999px; font-size:14px; font-weight:700; backdrop-filter:blur(6px); }
@@ -154,8 +155,8 @@ footer .wrap { display:flex; justify-content:space-between; gap:20px; flex-wrap:
   </div>
   <div class="blobs reveal" aria-hidden="true">
     <div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
-    <div class="hero-emoji">🌿</div>
-    <span class="leaf" style="left:20%;top:0;animation-delay:0s">🍃</span><span class="leaf" style="left:60%;top:0;animation-delay:3s">🍂</span><span class="leaf" style="left:80%;top:0;animation-delay:6s">🍃</span>
+    <div class="hero-photo"><img src="https://images.unsplash.com/photo-1738193830098-2d92352a1856?w=1000&h=1000&fit=crop&q=75&auto=format" alt="Landscaped front yard"></div>
+    
     <div class="hero-card"><div class="big">24h</div><div><b>Free estimates</b><small>Most quotes back within a day</small></div></div>
   </div>
 </div></header>
@@ -167,10 +168,10 @@ footer .wrap { display:flex; justify-content:space-between; gap:20px; flex-wrap:
   <h2 class="serif reveal">Care for <em>every season.</em></h2>
   <p class="sub reveal">Oklahoma weather keeps lawns guessing. We plan around it.</p>
   <div class="tabs reveal" id="tabs"><button class="on" data-s="spring">🌸 Spring</button><button data-s="summer">☀️ Summer</button><button data-s="fall">🍂 Fall</button><button data-s="winter">❄️ Winter</button></div>
-  <div class="season on" id="spring"><div class="scard"><div class="ic">🌱</div><h3>Aeration &amp; seeding</h3><p>Wake up tired turf and fill bare patches before the heat hits.</p></div><div class="scard"><div class="ic">🌷</div><h3>Bed refresh</h3><p>New mulch, crisp edges and fresh color in every bed.</p></div><div class="scard"><div class="ic">🧹</div><h3>Spring cleanup</h3><p>Winter debris out, first cut of the season in.</p></div></div>
-  <div class="season" id="summer"><div class="scard"><div class="ic">🚜</div><h3>Weekly mowing</h3><p>Mow, edge and blow. Same crew, same day, every week.</p></div><div class="scard"><div class="ic">💧</div><h3>Irrigation checks</h3><p>Sprinkler tune-ups so you're not watering the sidewalk.</p></div><div class="scard"><div class="ic">✂️</div><h3>Shrub trimming</h3><p>Clean shapes that keep your house looking sharp.</p></div></div>
-  <div class="season" id="fall"><div class="scard"><div class="ic">🍁</div><h3>Leaf removal</h3><p>Bagged and hauled, or mulched back into the lawn.</p></div><div class="scard"><div class="ic">🌾</div><h3>Overseeding</h3><p>The best time of year to thicken up fescue lawns.</p></div><div class="scard"><div class="ic">🪴</div><h3>Fall plantings</h3><p>Trees and shrubs root best before winter.</p></div></div>
-  <div class="season" id="winter"><div class="scard"><div class="ic">🌲</div><h3>Pruning</h3><p>Dormant-season cuts for healthier spring growth.</p></div><div class="scard"><div class="ic">🎄</div><h3>Holiday lighting</h3><p>Install, takedown and storage. One less ladder for you.</p></div><div class="scard"><div class="ic">📋</div><h3>Spring planning</h3><p>Design consults to get on the books before the rush.</p></div></div>
+  <div class="season on" id="spring"><div class="sphoto"><img src="https://images.unsplash.com/photo-1700689807667-82630348b301?w=1400&h=540&fit=crop&q=75&auto=format" alt="spring yard work" loading="lazy"></div><div class="scard"><div class="ic"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#f2b84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V11M12 11c0-4 3-7 8-7 0 5-3 7-8 7zM12 14c0-3-2-6-7-6 0 4 2 6 7 6z"/></svg></div><h3>Aeration &amp; seeding</h3><p>Wake up tired turf and fill bare patches before the heat hits.</p></div><div class="scard"><div class="ic"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#f2b84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-8M8 4c0 5 1.5 9 4 9s4-4 4-9c-1.5 1-2.5 2-4 4-1.5-2-2.5-3-4-4z"/></svg></div><h3>Bed refresh</h3><p>New mulch, crisp edges and fresh color in every bed.</p></div><div class="scard"><div class="ic"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#f2b84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3l-4 10M7 13h8l2 8H5z"/></svg></div><h3>Spring cleanup</h3><p>Winter debris out, first cut of the season in.</p></div></div>
+  <div class="season" id="summer"><div class="sphoto"><img src="https://images.unsplash.com/photo-1779636489740-6077a4198be6?w=1400&h=540&fit=crop&q=75&auto=format" alt="summer yard work" loading="lazy"></div><div class="scard"><div class="ic"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#f2b84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8v6H3zM11 9h4l3 4v4h-3"/><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="2"/></svg></div><h3>Weekly mowing</h3><p>Mow, edge and blow. Same crew, same day, every week.</p></div><div class="scard"><div class="ic"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#f2b84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c4 5 6 8 6 11a6 6 0 01-12 0c0-3 2-6 6-11z"/></svg></div><h3>Irrigation checks</h3><p>Sprinkler tune-ups so you're not watering the sidewalk.</p></div><div class="scard"><div class="ic"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#f2b84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M8 8l12 10M8 16L20 6"/></svg></div><h3>Shrub trimming</h3><p>Clean shapes that keep your house looking sharp.</p></div></div>
+  <div class="season" id="fall"><div class="sphoto"><img src="https://images.unsplash.com/photo-1716167910005-1f58a546959b?w=1400&h=540&fit=crop&q=75&auto=format" alt="fall yard work" loading="lazy"></div><div class="scard"><div class="ic"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#f2b84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-6M12 3l2 5 4-2-1 5 4 1-5 4H8l-5-4 4-1-1-5 4 2z"/></svg></div><h3>Leaf removal</h3><p>Bagged and hauled, or mulched back into the lawn.</p></div><div class="scard"><div class="ic"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#f2b84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V7M12 7c-2-1-3-3-3-5 2 0 3 2 3 5zm0 0c2-1 3-3 3-5-2 0-3 2-3 5zM12 12c-2-1-3-3-3-5 2 0 3 2 3 5zm0 0c2-1 3-3 3-5-2 0-3 2-3 5z"/></svg></div><h3>Overseeding</h3><p>The best time of year to thicken up fescue lawns.</p></div><div class="scard"><div class="ic"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#f2b84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 14h10l-1.5 7h-7zM12 14V8M12 8c0-3 2-5 6-5 0 3-2 5-6 5z"/></svg></div><h3>Fall plantings</h3><p>Trees and shrubs root best before winter.</p></div></div>
+  <div class="season" id="winter"><div class="sphoto"><img src="https://images.unsplash.com/photo-1621272156568-7306716648df?w=1400&h=540&fit=crop&q=75&auto=format" alt="winter yard work" loading="lazy"></div><div class="scard"><div class="ic"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#f2b84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l6 8h-3l4 6H5l4-6H6zM12 17v4"/></svg></div><h3>Pruning</h3><p>Dormant-season cuts for healthier spring growth.</p></div><div class="scard"><div class="ic"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#f2b84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21h14M12 3l-6 14h12z"/></svg></div><h3>Holiday lighting</h3><p>Install, takedown and storage. One less ladder for you.</p></div><div class="scard"><div class="ic"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#f2b84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/></svg></div><h3>Spring planning</h3><p>Design consults to get on the books before the rush.</p></div></div>
 </div></section>
 
 <section id="estimate"><div class="wrap center">
@@ -198,7 +199,7 @@ footer .wrap { display:flex; justify-content:space-between; gap:20px; flex-wrap:
 <section id="results" style="padding-top:0"><div class="wrap center">
   <div class="eyebrow reveal">The difference</div>
   <h2 class="serif reveal">Drag to see <em>the glow-up.</em></h2>
-  <div class="ba reveal" id="ba"><div class="side before"></div><div class="side after" id="after"></div><span class="lab" style="left:20px">Before</span><span class="lab" style="right:20px">After</span><div class="handle" id="handle"></div></div>
+  <div class="ba reveal" id="ba"><div class="side before"></div><div class="side after" id="after"></div><span class="lab" style="left:20px">Before</span><span class="lab" style="right:20px">After</span><span class="lab" style="left:50%;transform:translateX(-50%);top:auto;bottom:18px;font-weight:500;font-size:12px">Sample photos</span><div class="handle" id="handle"></div></div>
 </div></section>
 
 <section id="reviews" style="padding-top:0"><div class="wrap center">
